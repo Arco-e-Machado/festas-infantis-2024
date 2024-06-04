@@ -9,6 +9,14 @@ namespace FestasInfantis.WinApp.ModuloCliente
 {
     public class ControladorCliente : ControladorBase
     {
+        RepositorioCliente repositorioCliente;
+        TabelaClienteControl tabelaCliente;
+
+        public ControladorCliente(RepositorioCliente repositorio)
+        {
+            repositorioCliente = repositorio;
+        }
+
         public override string TipoCadastro { get { return "Clientes"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo cliente"; } }
@@ -19,7 +27,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         public override void Adicionar()
         {
-            TelaCadastroForm telaCliente = new TelaCadastroForm();
+            TelaClienteForm telaCliente = new TelaClienteForm();
 
             DialogResult resultado = telaCliente.ShowDialog();
 
@@ -27,21 +35,86 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             Cliente novoCliente = telaCliente.Cliente;
 
+            repositorioCliente.Cadastrar(novoCliente);
+
+            CarregarClientes();
+
         }
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            TelaClienteForm telaCliente = new TelaClienteForm();
+
+            int idSelecionado = tabelaCliente.ObterRegistroSelecionado();
+
+            Cliente clienteSelecionado = repositorioCliente.SelecionarPorId(idSelecionado);
+
+            if (clienteSelecionado == null)
+            {
+                MessageBox.Show(
+                              "Não é possível realizar esta ação sem um registro selecionado.",
+                             "Aviso",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Warning
+                         ); return;
+            }
+
+            telaCliente.Cliente = clienteSelecionado;
+            DialogResult resultado = telaCliente.ShowDialog();
+
+            if (resultado != DialogResult.OK) return;
+
+            Cliente clienteEditado = telaCliente.Cliente;
+
+            repositorioCliente.Editar(clienteEditado.Id, clienteEditado);
+            CarregarClientes();
+
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
-        }
+            int idSelecionado = tabelaCliente.ObterRegistroSelecionado();
+
+            Cliente clienteSelecionado = repositorioCliente.SelecionarPorId(idSelecionado);
+
+            if (clienteSelecionado == null)
+            {
+                MessageBox.Show(
+                               "Não é possível realizar esta ação sem um registro selecionado.",
+                              "Aviso",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning
+                          ); return;
+            }
+
+            DialogResult resultado = MessageBox.Show(
+                $"Você deseja realmente excluir o registro \"{clienteSelecionado.Nome}\"?",
+                "Confirmar Exclusão",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (resultado != DialogResult.Yes) return;
+
+            repositorioCliente.Excluir(clienteSelecionado.Id);
+            CarregarClientes();
+
+        } 
 
         public override UserControl ObterListagem()
         {
-            throw new NotImplementedException();
+            if (tabelaCliente == null)
+                tabelaCliente = new TabelaClienteControl();
+
+            CarregarClientes();
+
+            return tabelaCliente;
+        }
+
+        private void CarregarClientes()
+        {
+            List<Cliente> cliente = repositorioCliente.SelecionarTodos();
+
+            tabelaCliente.AtualizarRegistros(cliente);
         }
     }
 }

@@ -1,13 +1,33 @@
-﻿namespace FestasInfantis.WinApp.ModuloAluguel
+﻿using eAgenda.ConsoleApp.Compartilhado;
+
+namespace FestasInfantis.WinApp.ModuloAluguel
 {
-    internal class Aluguel
+    public class Aluguel : EntidadeBase
     {
-        public string cliente { get; set; }
-        public string tema { get; set; }
-        public string festa { get; set; }
-        public bool status { get; set; }
-        public double porcntSaida { get; set; }
-        public double porcntEntrada { get; set; }
-        public DateTime DataPagemento { get; set; }
+        public string Cliente { get; set; }
+        public string Tema { get; set; }
+        public string Festa { get; set; }
+        public bool Status { get; set; }
+        public double porcentagemSaida { get; set; }
+        public double porcentagemEntrada { get; set; }
+        public DateTime DataPagamento { get; set; }
+
+        public override void AtualizarRegistro(EntidadeBase novoRegistro)
+        {
+            Aluguel atualizar = (Aluguel)novoRegistro;
+
+            Cliente = atualizar.Cliente;
+            Tema = atualizar.Tema;
+            Festa = atualizar.Festa;
+            Status = atualizar.Status;
+            porcentagemEntrada = atualizar.porcentagemEntrada;
+            porcentagemSaida = atualizar.porcentagemSaida;
+            DataPagamento = atualizar.DataPagamento;
+        }
+
+        public override List<string> Validar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

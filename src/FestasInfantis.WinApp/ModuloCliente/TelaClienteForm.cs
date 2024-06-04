@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FestasInfantis.WinApp.ModuloCliente
 {
-    public partial class TelaCadastroForm : Form
+    public partial class TelaClienteForm : Form
     {
         private Cliente cliente;
         public Cliente Cliente
@@ -27,12 +27,12 @@ namespace FestasInfantis.WinApp.ModuloCliente
         }
 
 
-        public TelaCadastroForm()
+        public TelaClienteForm()
         {
             InitializeComponent();
         }
 
-        private btnGravar_Click(object sender, EventArgs e)
+        private TelaClienteForm(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
             string telefone = txtFone.Text;

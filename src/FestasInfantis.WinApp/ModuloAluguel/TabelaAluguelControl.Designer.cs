@@ -1,6 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloCliente
+﻿namespace FestasInfantis.WinApp.ModuloAluguel
 {
-    partial class TabelaClienteControl
+    partial class TabelaAluguelControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,16 +42,16 @@
             grid.Name = "grid";
             grid.ReadOnly = true;
             grid.RowHeadersWidth = 51;
-            grid.Size = new Size(702, 265);
+            grid.Size = new Size(580, 265);
             grid.TabIndex = 0;
             // 
-            // TabelaClienteControl
+            // TabelaAluguelControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
-            Name = "TabelaClienteControl";
-            Size = new Size(702, 265);
+            Name = "TabelaAluguelControl";
+            Size = new Size(580, 265);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

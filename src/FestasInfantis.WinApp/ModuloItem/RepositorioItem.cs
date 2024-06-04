@@ -1,6 +1,8 @@
-﻿namespace FestasInfantis.WinApp.ModuloItem
+﻿using eAgenda.ConsoleApp.Compartilhado;
+
+namespace FestasInfantis.WinApp.ModuloItem
 {
-    internal class RepositorioItem
+    internal class RepositorioItem : RepositorioBase<Item>
     {
     }
 }

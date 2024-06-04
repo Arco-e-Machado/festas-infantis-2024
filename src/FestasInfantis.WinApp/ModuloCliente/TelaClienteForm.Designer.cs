@@ -1,6 +1,6 @@
 ﻿namespace FestasInfantis.WinApp.ModuloCliente
 {
-    partial class TelaCadastroForm
+    partial class TelaClienteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "TelaCadastroForm";
+            SuspendLayout();
+            // 
+            // TelaCadastroForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "TelaCadastroForm";
+            Text = "TelaCadastroForm";
+            ResumeLayout(false);
         }
 
         #endregion
