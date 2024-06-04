@@ -1,4 +1,6 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloAluguel
 {
@@ -12,6 +14,10 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public double porcentagemEntrada { get; set; }
         public DateTime DataPagamento { get; set; }
 
+        public Aluguel(Cliente cliente, Tema tema, Festa)
+        {
+            
+        }
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
             Aluguel atualizar = (Aluguel)novoRegistro;

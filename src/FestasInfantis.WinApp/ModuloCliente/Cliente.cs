@@ -1,4 +1,5 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Cpf { get; set; }
+        public List<Aluguel> alugueis { get; set; } = new List<Aluguel>();
 
         public Cliente(string nome, string telefone, string cpf)
         {
