@@ -33,7 +33,7 @@ namespace FestasInfantis.WinApp.ModuloItem
         }
 
         public override UserControl ObterListagem()
-        {
+    {
             throw new NotImplementedException();
         }
     }

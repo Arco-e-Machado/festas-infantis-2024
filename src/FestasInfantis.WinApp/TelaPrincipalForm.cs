@@ -59,5 +59,9 @@ namespace FestasInfantis.WinApp
             pnlRegistros.Controls.Add(listagemContato);
         }
 
+        private void TelaPrincipalForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
