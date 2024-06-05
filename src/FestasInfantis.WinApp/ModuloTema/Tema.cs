@@ -2,7 +2,7 @@
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class Tema
+    public class Tema
     {
         public double ValorTotal { get; set; }
         public string TemaNome { get; set; }
