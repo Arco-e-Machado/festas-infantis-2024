@@ -14,7 +14,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public double porcentagemEntrada { get; set; }
         public DateTime DataPagamento { get; set; }
 
-        public Aluguel(Cliente cliente, Tema tema, Festa)
+        public Aluguel(Cliente cliente, Tema tema, Festa Festa)
         {
             
         }
