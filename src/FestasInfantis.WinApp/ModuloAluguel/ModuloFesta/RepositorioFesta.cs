@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestasInfantis.WinApp.ModuloFesta
+namespace FestasInfantis.WinApp.ModuloAluguel.ModuloFesta
 {
     public class RepositorioFesta : RepositorioBase<Festa>
     {

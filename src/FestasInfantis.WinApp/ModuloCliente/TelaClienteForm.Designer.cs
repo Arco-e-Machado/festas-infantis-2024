@@ -49,7 +49,6 @@
             lblId.Size = new Size(23, 15);
             lblId.TabIndex = 0;
             lblId.Text = "ID:";
-            lblId.Click += label1_Click;
             // 
             // lblNome
             // 
@@ -91,7 +90,6 @@
             txtId.ReadOnly = true;
             txtId.Size = new Size(61, 25);
             txtId.TabIndex = 0;
-            txtId.TextChanged += textBox1_TextChanged;
             // 
             // txtNome
             // 
@@ -100,7 +98,6 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(357, 25);
             txtNome.TabIndex = 1;
-            txtNome.TextChanged += textBox2_TextChanged;
             // 
             // txtCpf
             // 
@@ -109,7 +106,6 @@
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(126, 25);
             txtCpf.TabIndex = 2;
-            txtCpf.Text = "___.___.___-__";
             // 
             // txtFone
             // 
@@ -119,7 +115,6 @@
             txtFone.Size = new Size(171, 25);
             txtFone.TabIndex = 3;
             txtFone.Text = "(__) _____-____";
-            txtFone.TextChanged += txtFone_TextChanged;
             // 
             // btnSalvar
             // 
@@ -161,7 +156,6 @@
             MinimizeBox = false;
             Name = "TelaClienteForm";
             Text = "Cadastro De Clientes";
-            Load += TelaClienteForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
