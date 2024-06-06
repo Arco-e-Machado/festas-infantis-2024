@@ -31,7 +31,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             DialogResult resultado = telaCliente.ShowDialog();
 
-            if (resultado == DialogResult.OK) return;
+            if (resultado ! = DialogResult.OK) return;
 
             Cliente novoCliente = telaCliente.Cliente;
 

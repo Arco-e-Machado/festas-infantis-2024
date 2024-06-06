@@ -9,6 +9,7 @@ namespace FestasInfantis.WinApp.ModuloItem
 
         public Item(string descricao, decimal valor)
         {
+            Nome = nome;
             Descricao = descricao;
             Valor = valor;
         }
@@ -18,6 +19,7 @@ namespace FestasInfantis.WinApp.ModuloItem
             Item atualizar = (Item)novoRegistro;
 
             Descricao = atualizar.Descricao;
+            Nomve = atualizar.Nome;
             Valor = atualizar.Valor;
         }
 
@@ -25,6 +27,8 @@ namespace FestasInfantis.WinApp.ModuloItem
         {
             List<string> erros = new List<string>();
 
+            if (string.IsNullOrEmpty(Nome.Trim()))
+                erros.Add("O campo \"nome\" deve ser preenchido")
             if (string.IsNullOrEmpty(Descricao.Trim()))
                 erros.Add("O campo \"descrição\" deve ser preenchido");
 
