@@ -30,7 +30,9 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             Tema novoTema = telaTema.Tema;
 
-            repositorioTema.
+            repositorioTema.Cadastrar(novoTema);
+
+            CarregarTema();
         }
 
         public override void Editar()
