@@ -68,7 +68,6 @@
             lblValor.Size = new Size(42, 17);
             lblValor.TabIndex = 2;
             lblValor.Text = "Valor:";
-            lblValor.Click += txtValor_Click;
             // 
             // btnCancelar
             // 
@@ -133,7 +132,6 @@
             Name = "TelaItemForm";
             ShowIcon = false;
             Text = "Cadastro De Itens";
-            Load += TelaItemForm_Load;
             ((System.ComponentModel.ISupportInitialize)txtValor).EndInit();
             ResumeLayout(false);
             PerformLayout();

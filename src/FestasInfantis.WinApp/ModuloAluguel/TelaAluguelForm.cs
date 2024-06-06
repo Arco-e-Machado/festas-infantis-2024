@@ -21,13 +21,13 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             set
             {
                 txtId.Text = value.Id.ToString();
-                txt1.Text = value.Cliente;
-                txt2.Text = value.Tema;
-                txt3.Text = value.Festa;
-                txt4.Text = value.Status;
-                txt5.Text = value.PorcentagemEntrada;
-                txt6.Text = value.PorcentagemSaida;
-                txt7.Text = value.DataPagamento;
+                txtCliente.Text = value.Cliente;
+                txtTema.Text = value.Tema;
+                txtFesta.Text = value.Festa;
+                txtStatus.Text = value.Status;
+                txtPorcentagemEntrada.Text = value.PorcentagemEntrada;
+                txtPorcentagemSaida.Text = value.PorcentagemSaida;
+                txtPagamento.Text = value.DataPagamento;
             }
             get { return aluguel; }
         }
@@ -38,15 +38,30 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
         private TelaAluguelForm(object sender, EventArgs e)
         {
-            Cliente cliente = txt1.Text;
-            Tema tema = txt2.Text;
-            Festa festa = txt3.Text;
-            bool status = txt4.Text;
-            decimal pEntrada = txt5.Text;
-            decimal pSaida = txt6.Text;
-            DateTime dataPagamento = txt7.Text;
+            Cliente cliente = txtCliente.Text;
+            Tema tema = txtTema.Text;
+            Festa festa = txtFesta.Text;
+            bool status = txtStatus.Text;
+            decimal pEntrada = txtPorcentagemEntrada.Text;
+            decimal pSaida = txtPorcentagemSaida.Text;
+            DateTime dataPagamento = txtPagemento.Text;
 
             aluguel = new Aluguel(cliente, tema, festa, status, pSaida, pEntrada, dataPagamento);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelaAluguelForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

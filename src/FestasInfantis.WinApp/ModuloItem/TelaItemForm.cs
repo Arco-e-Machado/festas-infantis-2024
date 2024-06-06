@@ -38,20 +38,5 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             item = new Item(descricao, valor);
         }
-
-        private void TelaItemForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtValor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
