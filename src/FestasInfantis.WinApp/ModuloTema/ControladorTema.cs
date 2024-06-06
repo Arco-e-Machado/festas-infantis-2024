@@ -1,4 +1,6 @@
-﻿using System;
+﻿using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloItem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,44 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class ControladorTema
+    public class ControladorTema : ControladorBase
     {
+        RepositorioTema repositorioTema;
+        TabelaTemaControl tabelaTema;
+        public override string TipoCadastro { get { return "Tema"; } }
+
+        public override string ToolTipAdicionar { get { return "Adicionar um novo tema"; } }
+
+        public override string ToolTipEditar { get { return "Editar um tema existente"; } }
+
+        public override string ToolTipExcluir { get { return "Excluir um tema exista"; } }
+
+        public override void Adicionar()
+        {
+            TelaTemaFrom telaTema = new TelaTemaFrom();
+
+            DialogResult resultado = telaTema.ShowDialog();
+
+            if (resultado != DialogResult.OK) return;
+
+            Tema novoTema = telaTema.Tema;
+
+            repositorioTema.
+        }
+
+        public override void Editar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Excluir()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override UserControl ObterListagem()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

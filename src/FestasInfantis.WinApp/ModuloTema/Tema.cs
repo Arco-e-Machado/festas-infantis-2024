@@ -1,9 +1,10 @@
-﻿using FestasInfantis.WinApp.ModuloAluguel;
+﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel;
 using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    public class Tema
+    public class Tema : EntidadeBase
     {
         public decimal ValorTotal { get; set; }
         public string TemaNome { get; set; }

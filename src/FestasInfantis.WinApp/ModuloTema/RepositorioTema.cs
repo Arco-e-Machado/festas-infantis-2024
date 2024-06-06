@@ -1,6 +1,8 @@
-﻿namespace FestasInfantis.WinApp.ModuloTema
+﻿using eAgenda.ConsoleApp.Compartilhado;
+
+namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class RepositorioTema
+    public class RepositorioTema : RepositorioBase<Tema>
     {
     }
 }
