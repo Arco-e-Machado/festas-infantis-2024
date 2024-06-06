@@ -29,7 +29,7 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             foreach (Item i in itens)
             {
-                grid.Rows.Add(i.Id, i.Descricao, i.Valor, i.Tema);
+                grid.Rows.Add(i.Id, i.Nome, i.Descricao, i.Valor);
             }
         }
 
@@ -42,9 +42,9 @@ namespace FestasInfantis.WinApp.ModuloItem
         {
             return new DataGridViewColumn[]{
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome"},
                 new DataGridViewTextBoxColumn { DataPropertyName = "Descricao", HeaderText = "Descrição"},
                 new DataGridViewTextBoxColumn { DataPropertyName = "Valor", HeaderText = "Valor"},
-                new DataGridViewTextBoxColumn { DataPropertyName = "Tema", HeaderText = "Tema"}
             };
         }
     }

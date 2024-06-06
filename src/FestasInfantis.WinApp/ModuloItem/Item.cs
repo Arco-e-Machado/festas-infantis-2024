@@ -5,10 +5,12 @@ namespace FestasInfantis.WinApp.ModuloItem
     public class Item : EntidadeBase
     {
         public string Descricao { get; set; }
+        public string Nome { get; set; }
         public double Valor { get; set; }
 
-        public Item(string descricao, double valor, string tema)
+        public Item(string descricao,string nome, double valor)
         {
+            Nome = nome;
             Descricao = descricao;
             Valor = valor;
         }
@@ -18,6 +20,7 @@ namespace FestasInfantis.WinApp.ModuloItem
             Item atualizar = (Item)novoRegistro;
 
             Descricao = atualizar.Descricao;
+            Nomve = atualizar.Nome;
             Valor = atualizar.Valor;
 
         }
@@ -26,6 +29,8 @@ namespace FestasInfantis.WinApp.ModuloItem
         {
             List<string> erros = new List<string>();
 
+            if (string.IsNullOrEmpty(Nome.Trim()))
+                erros.Add("O campo \"nome\" deve ser preenchido")
             if (string.IsNullOrEmpty(Descricao.Trim()))
                 erros.Add("O campo \"descrição\" deve ser preenchido");
 
