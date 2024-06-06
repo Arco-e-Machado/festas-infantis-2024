@@ -1,0 +1,38 @@
+﻿Cadastro de Clientes:
+-Nome
+-Telefone
+-CPF
+-Aluguéis
+> Calcular desconto para novos aluguéis a partir de aluguéis concluídos.
+> Visualizar aluguéis relacionados a um cliente.
+
+Cadastro de Temas:
+-Nome
+-Valor total
+-Itens
+>Incluir vários itens em um tema, somando o valor total com base no valor de cada item.
+
+Cadastro de Itens:
+-Descrição
+-Valor
+-Tema
+>Não permitir o uso do mesmo item em temas diferentes.
+
+Cadastro de Aluguéis:
+-Cliente
+-Tema
+-Porcentagem de entrada (entre 40% e 50%)
+-Porcentagem de desconto
+-Data do pagamento (caso concluído)
+-Status
+-Festa (endereço, data, hora de início e hora de término)
+> Filtrar entre aluguéis pendentes e concluídos.
+> Concluir um aluguel.
+
+Controle de Desconto:
+-Porcentagem de desconto por aluguel
+-Porcentagem máxima de desconto
+>Calcular valor de desconto para cada aluguel realizado por um cliente (a partir do primeiro).
+>Configurar porcentagens através de um botão na tela principal.
+
+

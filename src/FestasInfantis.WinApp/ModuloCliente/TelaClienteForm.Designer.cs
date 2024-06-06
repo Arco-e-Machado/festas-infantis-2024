@@ -28,18 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lblId = new Label();
+            lblNome = new Label();
+            lblCpf = new Label();
+            lblTelefone = new Label();
+            txtId = new TextBox();
+            txtNome = new TextBox();
+            txtCpf = new TextBox();
+            txtFone = new TextBox();
+            btnSalvar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
-            // TelaCadastroForm
+            // lblId
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            lblId.AutoSize = true;
+            lblId.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblId.Location = new Point(38, 39);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(23, 15);
+            lblId.TabIndex = 0;
+            lblId.Text = "ID:";
+            lblId.Click += label1_Click;
+            // 
+            // lblNome
+            // 
+            lblNome.AutoSize = true;
+            lblNome.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNome.Location = new Point(18, 73);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(43, 15);
+            lblNome.TabIndex = 1;
+            lblNome.Text = "Nome:";
+            // 
+            // lblCpf
+            // 
+            lblCpf.AutoSize = true;
+            lblCpf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCpf.Location = new Point(31, 104);
+            lblCpf.Name = "lblCpf";
+            lblCpf.Size = new Size(30, 15);
+            lblCpf.TabIndex = 2;
+            lblCpf.Text = "CPF:";
+            // 
+            // lblTelefone
+            // 
+            lblTelefone.AutoSize = true;
+            lblTelefone.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTelefone.Location = new Point(6, 135);
+            lblTelefone.Name = "lblTelefone";
+            lblTelefone.Size = new Size(55, 15);
+            lblTelefone.TabIndex = 3;
+            lblTelefone.Text = "Telefone:";
+            // 
+            // txtId
+            // 
+            txtId.BackColor = SystemColors.ButtonFace;
+            txtId.BorderStyle = BorderStyle.FixedSingle;
+            txtId.Font = new Font("Segoe UI", 9.75F);
+            txtId.Location = new Point(67, 37);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(126, 25);
+            txtId.TabIndex = 0;
+            txtId.TextChanged += textBox1_TextChanged;
+            // 
+            // txtNome
+            // 
+            txtNome.Font = new Font("Segoe UI", 9.75F);
+            txtNome.Location = new Point(67, 68);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(357, 25);
+            txtNome.TabIndex = 1;
+            txtNome.TextChanged += textBox2_TextChanged;
+            // 
+            // txtCpf
+            // 
+            txtCpf.Font = new Font("Segoe UI", 9.75F);
+            txtCpf.Location = new Point(67, 99);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(126, 25);
+            txtCpf.TabIndex = 2;
+            txtCpf.Text = "___.___.___-__";
+            // 
+            // txtFone
+            // 
+            txtFone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFone.Location = new Point(67, 130);
+            txtFone.Name = "txtFone";
+            txtFone.Size = new Size(171, 25);
+            txtFone.TabIndex = 3;
+            txtFone.Text = "(__) _____-____";
+            txtFone.TextChanged += txtFone_TextChanged;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(338, 122);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(86, 40);
+            btnSalvar.TabIndex = 4;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += button1_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(430, 122);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(86, 40);
+            btnCancelar.TabIndex = 5;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // TelaClienteForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "TelaCadastroForm";
-            Text = "TelaCadastroForm";
+            ClientSize = new Size(526, 183);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnSalvar);
+            Controls.Add(txtFone);
+            Controls.Add(txtCpf);
+            Controls.Add(txtNome);
+            Controls.Add(txtId);
+            Controls.Add(lblTelefone);
+            Controls.Add(lblCpf);
+            Controls.Add(lblNome);
+            Controls.Add(lblId);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "TelaClienteForm";
+            Text = "Cadastro De Clientes";
+            Load += TelaClienteForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblId;
+        private Label lblNome;
+        private Label lblCpf;
+        private Label lblTelefone;
+        private TextBox txtId;
+        private TextBox txtNome;
+        private TextBox txtCpf;
+        private TextBox txtFone;
+        private Button btnSalvar;
+        private Button btnCancelar;
     }
 }

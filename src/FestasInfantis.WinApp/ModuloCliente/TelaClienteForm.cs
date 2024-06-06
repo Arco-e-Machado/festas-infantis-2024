@@ -40,5 +40,40 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             cliente = new Cliente(nome, telefone, cpf);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelaClienteForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
