@@ -1,6 +1,8 @@
-﻿namespace FestasInfantis.WinApp.ModuloAluguel
+﻿using eAgenda.ConsoleApp.Compartilhado;
+
+namespace FestasInfantis.WinApp.ModuloAluguel
 {
-    internal class RepositorioAluguel
+    public class RepositorioAluguel : RepositorioBase<Aluguel>
     {
     }
 }

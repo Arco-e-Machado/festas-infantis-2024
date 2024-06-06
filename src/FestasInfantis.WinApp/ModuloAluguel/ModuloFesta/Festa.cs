@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestasInfantis.WinApp.ModuloFesta
+namespace FestasInfantis.WinApp.ModuloAluguel.ModuloFesta
 {
     public class Festa : EntidadeBase
     {
-        public string Endereco {  get; set; }
-        public DateTime Data {  get; set; }
+        public string Endereco { get; set; }
+        public DateTime Data { get; set; }
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraTermino { get; set; }
 
@@ -24,7 +24,7 @@ namespace FestasInfantis.WinApp.ModuloFesta
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
-            Festa atualizar = (Festa) novoRegistro;
+            Festa atualizar = (Festa)novoRegistro;
         }
 
         public override List<string> Validar()

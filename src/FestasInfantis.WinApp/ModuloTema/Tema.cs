@@ -1,12 +1,21 @@
 ﻿using FestasInfantis.WinApp.ModuloAluguel;
+using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
     public class Tema
     {
-        public double ValorTotal { get; set; }
+        public decimal ValorTotal { get; set; }
         public string TemaNome { get; set; }
-        public string itens { get; set; }
-        public Aluguel aluguel { get; set; }    
+        public Item Itens;
+        public Aluguel Aluguel;
+
+        public Tema(decimal valorTotal, string temaNome, Item itens, Aluguel aluguel)
+        {
+            ValorTotal = valorTotal;
+            TemaNome = temaNome;
+            Itens = itens;
+            Aluguel = aluguel;
+        }
     }
 }

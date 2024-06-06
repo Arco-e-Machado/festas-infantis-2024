@@ -1,24 +1,30 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel.ModuloFesta;
 using FestasInfantis.WinApp.ModuloCliente;
-using FestasInfantis.WinApp.ModuloFesta;
 using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloAluguel
 {
     public class Aluguel : EntidadeBase
     {
-        public string Cliente { get; set; }
-        public string Tema { get; set; }
+        public Cliente Cliente { get; set; }
+        public Tema Tema { get; set; }
+        public Festa Festa;
         public bool Status { get; set; }
-        public double porcentagemSaida { get; set; }
-        public double porcentagemEntrada { get; set; }
+        public decimal PorcentagemSaida { get; set; }
+        public decimal PorcentagemEntrada { get; set; }
         public DateTime DataPagamento { get; set; }
 
-        public Festa Festa;
-
-        public Aluguel(Cliente cliente, Tema tema, Festa festa)
+        public Aluguel(Cliente cliente, Tema tema, Festa festa, bool status, decimal saida, decimal entrada, DateTime pagamento)
         {
-            
+            Cliente = cliente;
+            Tema = tema;
+            Festa = festa;
+            Status = status;
+            PorcentagemSaida = saida;
+            PorcentagemEntrada = entrada;
+            DataPagamento = pagamento;
+
         }
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
@@ -28,8 +34,8 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             Tema = atualizar.Tema;
             Festa = atualizar.Festa;
             Status = atualizar.Status;
-            porcentagemEntrada = atualizar.porcentagemEntrada;
-            porcentagemSaida = atualizar.porcentagemSaida;
+            PorcentagemEntrada = atualizar.PorcentagemEntrada;
+            PorcentagemSaida = atualizar.PorcentagemSaida;
             DataPagamento = atualizar.DataPagamento;
         }
 

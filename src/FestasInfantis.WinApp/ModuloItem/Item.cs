@@ -6,13 +6,11 @@ namespace FestasInfantis.WinApp.ModuloItem
     {
         public string Descricao { get; set; }
         public double Valor { get; set; }
-        public string Tema { get; set; }
 
         public Item(string descricao, double valor, string tema)
         {
             Descricao = descricao;
             Valor = valor;
-            Tema = tema;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -21,7 +19,6 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             Descricao = atualizar.Descricao;
             Valor = atualizar.Valor;
-            Tema = atualizar.Tema;
 
         }
 
@@ -31,9 +28,6 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             if (string.IsNullOrEmpty(Descricao.Trim()))
                 erros.Add("O campo \"descrição\" deve ser preenchido");
-
-            if (string.IsNullOrEmpty(Tema.Trim()))
-                erros.Add("O campo \"Tema\" deve ser preenchido");
 
             if (Valor == null || Valor == 0)
                 erros.Add("O campo \"Valor\" deve ser preenchido");
