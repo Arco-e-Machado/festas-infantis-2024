@@ -1,19 +1,20 @@
-﻿using FestasInfantis.WinApp.ModuloAluguel;
+﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel;
 using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    public class Tema
+    public class Tema : EntidadeBase
     {
         public decimal ValorTotal { get; set; }
-        public string TemaNome { get; set; }
+        public string Nome { get; set; }
         public Item Itens;
         public Aluguel Aluguel;
 
-        public Tema(decimal valorTotal, string temaNome, Item itens, Aluguel aluguel)
+        public Tema(decimal valorTotal, string Nome, Item itens, Aluguel aluguel)
         {
             ValorTotal = valorTotal;
-            TemaNome = temaNome;
+            Nome = Nome;
             Itens = itens;
             Aluguel = aluguel;
         }
