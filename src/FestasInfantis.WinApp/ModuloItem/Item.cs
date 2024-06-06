@@ -5,9 +5,9 @@ namespace FestasInfantis.WinApp.ModuloItem
     public class Item : EntidadeBase
     {
         public string Descricao { get; set; }
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
 
-        public Item(string descricao, double valor, string tema)
+        public Item(string descricao, decimal valor)
         {
             Descricao = descricao;
             Valor = valor;
@@ -19,7 +19,6 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             Descricao = atualizar.Descricao;
             Valor = atualizar.Valor;
-
         }
 
         public override List<string> Validar()

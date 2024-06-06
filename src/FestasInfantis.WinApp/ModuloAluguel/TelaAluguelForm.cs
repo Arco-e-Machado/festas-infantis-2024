@@ -46,7 +46,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             decimal pSaida = txt6.Text;
             DateTime dataPagamento = txt7.Text;
 
-            aluguel = new Aluguel(cliente, tema, festa, status, pSaida, pEntrada, dataPagamento)
+            aluguel = new Aluguel(cliente, tema, festa, status, pSaida, pEntrada, dataPagamento);
         }
     }
 }
