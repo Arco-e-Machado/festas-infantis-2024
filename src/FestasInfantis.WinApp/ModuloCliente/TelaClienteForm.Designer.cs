@@ -44,7 +44,7 @@
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblId.Location = new Point(36, 32);
+            lblId.Location = new Point(36, 37);
             lblId.Name = "lblId";
             lblId.Size = new Size(23, 15);
             lblId.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             lblCpf.AutoSize = true;
             lblCpf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCpf.Location = new Point(29, 105);
+            lblCpf.Location = new Point(29, 100);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(30, 15);
             lblCpf.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             lblTelefone.AutoSize = true;
             lblTelefone.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTelefone.Location = new Point(4, 142);
+            lblTelefone.Location = new Point(4, 131);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(55, 15);
             lblTelefone.TabIndex = 3;
@@ -85,7 +85,7 @@
             txtId.BackColor = SystemColors.ButtonFace;
             txtId.BorderStyle = BorderStyle.FixedSingle;
             txtId.Font = new Font("Segoe UI", 9.75F);
-            txtId.Location = new Point(65, 28);
+            txtId.Location = new Point(65, 33);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(61, 25);
@@ -96,21 +96,23 @@
             txtNome.Font = new Font("Segoe UI", 9.75F);
             txtNome.Location = new Point(65, 64);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(357, 25);
+            txtNome.Size = new Size(449, 25);
             txtNome.TabIndex = 1;
             // 
             // txtCpf
             // 
             txtCpf.Font = new Font("Segoe UI", 9.75F);
-            txtCpf.Location = new Point(65, 100);
+            txtCpf.Location = new Point(65, 95);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(126, 25);
+            txtCpf.Size = new Size(171, 25);
             txtCpf.TabIndex = 2;
+            txtCpf.Text = "___.___.___-__";
+            txtCpf.TextChanged += txtCpf_TextChanged;
             // 
             // txtFone
             // 
             txtFone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFone.Location = new Point(65, 137);
+            txtFone.Location = new Point(65, 126);
             txtFone.Name = "txtFone";
             txtFone.Size = new Size(171, 25);
             txtFone.TabIndex = 3;
@@ -139,7 +141,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(526, 183);
+            ClientSize = new Size(517, 165);
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
             Controls.Add(txtFone);
@@ -155,6 +157,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TelaClienteForm";
+            ShowIcon = false;
             Text = "Cadastro De Clientes";
             ResumeLayout(false);
             PerformLayout();

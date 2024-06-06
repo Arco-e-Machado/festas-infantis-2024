@@ -42,5 +42,15 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             cliente = new Cliente(nome, telefone, cpf);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCpf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

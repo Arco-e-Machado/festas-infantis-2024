@@ -30,13 +30,15 @@
         {
             SuspendLayout();
             // 
-            // TelaAlugelForm
+            // TelaAluguelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(679, 343);
-            Name = "TelaAlugelForm";
-            Text = "Form1";
+            ClientSize = new Size(624, 367);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "TelaAluguelForm";
+            Text = "Tela";
             ResumeLayout(false);
         }
 

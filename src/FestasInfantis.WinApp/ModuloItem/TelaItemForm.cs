@@ -19,10 +19,9 @@ namespace FestasInfantis.WinApp.ModuloItem
             set
             {
 
-                txtId.Text = value.Id.ToString();
-                txtDescricao.Text = value.Descricao;
-                txtValor.Text = value.Valor;
-                txtTema.Text = value.Tema;
+                lblId.Text = value.Id.ToString();
+                lblDescricao.Text = value.Descricao;
+                lblValor.Text = Convert.ToString(value.Valor);
 
             }
             get { return item; }
@@ -35,10 +34,24 @@ namespace FestasInfantis.WinApp.ModuloItem
         private TelaItemForm(object sender, EventArgs e)
         {
             string descricao = txtDescricao.Text;
-            double valor = txtValor.Value;
-            string tema = txtTema.Text;
+            decimal valor = txtValor.Value;
 
-            item = new Item(descricao, valor, tema);
+            item = new Item(descricao, valor);
+        }
+
+        private void TelaItemForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
