@@ -44,7 +44,7 @@
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblId.Location = new Point(38, 39);
+            lblId.Location = new Point(36, 32);
             lblId.Name = "lblId";
             lblId.Size = new Size(23, 15);
             lblId.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(18, 73);
+            lblNome.Location = new Point(16, 69);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(43, 15);
             lblNome.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             lblCpf.AutoSize = true;
             lblCpf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCpf.Location = new Point(31, 104);
+            lblCpf.Location = new Point(29, 105);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(30, 15);
             lblCpf.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             lblTelefone.AutoSize = true;
             lblTelefone.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTelefone.Location = new Point(6, 135);
+            lblTelefone.Location = new Point(4, 142);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(55, 15);
             lblTelefone.TabIndex = 3;
@@ -85,16 +85,16 @@
             txtId.BackColor = SystemColors.ButtonFace;
             txtId.BorderStyle = BorderStyle.FixedSingle;
             txtId.Font = new Font("Segoe UI", 9.75F);
-            txtId.Location = new Point(67, 37);
+            txtId.Location = new Point(65, 28);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(126, 25);
+            txtId.Size = new Size(61, 25);
             txtId.TabIndex = 0;
             // 
             // txtNome
             // 
             txtNome.Font = new Font("Segoe UI", 9.75F);
-            txtNome.Location = new Point(67, 68);
+            txtNome.Location = new Point(65, 64);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(357, 25);
             txtNome.TabIndex = 1;
@@ -102,7 +102,7 @@
             // txtCpf
             // 
             txtCpf.Font = new Font("Segoe UI", 9.75F);
-            txtCpf.Location = new Point(67, 99);
+            txtCpf.Location = new Point(65, 100);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(126, 25);
             txtCpf.TabIndex = 2;
@@ -110,7 +110,7 @@
             // txtFone
             // 
             txtFone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFone.Location = new Point(67, 130);
+            txtFone.Location = new Point(65, 137);
             txtFone.Name = "txtFone";
             txtFone.Size = new Size(171, 25);
             txtFone.TabIndex = 3;
@@ -118,7 +118,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(338, 122);
+            btnSalvar.Location = new Point(336, 122);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(86, 40);
             btnSalvar.TabIndex = 4;
@@ -128,7 +128,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(430, 122);
+            btnCancelar.Location = new Point(428, 122);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(86, 40);
             btnCancelar.TabIndex = 5;

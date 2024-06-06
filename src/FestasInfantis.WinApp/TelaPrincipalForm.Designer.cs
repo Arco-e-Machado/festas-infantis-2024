@@ -64,6 +64,7 @@
             menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.UseWaitCursor = true;
             // 
             // cadastrosToolStripMenuItem
             // 
@@ -99,6 +100,7 @@
             statusStrip1.Size = new Size(800, 25);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
+            statusStrip1.UseWaitCursor = true;
             // 
             // statusLabelPrincipal
             // 
@@ -114,6 +116,7 @@
             toolStrip1.Size = new Size(800, 41);
             toolStrip1.TabIndex = 2;
             toolStrip1.Text = "toolStrip1";
+            toolStrip1.UseWaitCursor = true;
             // 
             // btnAdicionar
             // 
@@ -237,6 +240,7 @@
             pnlRegistros.Name = "pnlRegistros";
             pnlRegistros.Size = new Size(800, 356);
             pnlRegistros.TabIndex = 3;
+            pnlRegistros.UseWaitCursor = true;
             // 
             // TelaPrincipalForm
             // 
