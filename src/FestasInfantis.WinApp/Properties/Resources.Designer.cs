@@ -10,8 +10,9 @@
 
 namespace FestasInfantis.WinApp.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,7 +24,7 @@ namespace FestasInfantis.WinApp.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+        internal static Image hora_e_data;
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -146,16 +147,6 @@ namespace FestasInfantis.WinApp.Properties {
         internal static System.Drawing.Bitmap btnVisualizarAlugueis {
             get {
                 object obj = ResourceManager.GetObject("btnVisualizarAlugueis", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hora_e_data {
-            get {
-                object obj = ResourceManager.GetObject("hora-e-data", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

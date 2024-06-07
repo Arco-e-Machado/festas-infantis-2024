@@ -15,8 +15,8 @@ namespace FestasInfantis.WinApp.ModuloTema
 {
     public partial class TelaTemaFrom : Form
     {
-        private Tema Tema;
-        public Tema tema
+        private Tema tema;
+        public Tema Tema
         {
             set
             {
@@ -36,7 +36,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string valor = txt1.Text;
+            decimal valor = txt1.Text;
             string nome = txt2.Text;
             Aluguel aluguel = txt3.value;
             Item item = txt4.value;

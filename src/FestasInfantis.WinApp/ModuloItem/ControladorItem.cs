@@ -96,7 +96,7 @@ namespace FestasInfantis.WinApp.ModuloItem
             }
 
             DialogResult resultado = MessageBox.Show(
-                $"Você deseja realmente excluir o registro \"{itemSelecionado.Nome}\"?",
+                $"Você deseja realmente excluir o registro \"{itemSelecionado.Id}\"?",
                 "Confirmar Exclusão",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);

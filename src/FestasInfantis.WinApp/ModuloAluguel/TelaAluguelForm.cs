@@ -21,10 +21,9 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             set
             {
                 txtId.Text = value.Id.ToString();
-                txtCliente.Text = value.Cliente;
-                txtTema.Text = value.Tema;
-                txtFesta.Text = value.Festa;
-                txtStatus.Text = value.Status;
+                txtCliente.SelectedItem = value.Cliente;
+                txtTema.SelectedItem = value.Tema;
+                txtStatus.SelectedItem = value.Status;
                 txtPorcentagemEntrada.Text = value.PorcentagemEntrada;
                 txtPorcentagemSaida.Text = value.PorcentagemSaida;
                 txtPagamento.Text = value.DataPagamento;
@@ -39,7 +38,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         private TelaAluguelForm(object sender, EventArgs e)
         {
             Cliente cliente = txtCliente.Text;
-            Tema tema = txtTema.Text;
+            Tema tema = txtTema;
             Festa festa = txtFesta.Text;
             bool status = txtStatus.Text;
             decimal pEntrada = txtPorcentagemEntrada.Text;
@@ -47,21 +46,6 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             DateTime dataPagamento = txtPagemento.Text;
 
             aluguel = new Aluguel(cliente, tema, festa, status, pSaida, pEntrada, dataPagamento);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TelaAluguelForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

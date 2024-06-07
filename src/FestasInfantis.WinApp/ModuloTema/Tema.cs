@@ -18,5 +18,15 @@ namespace FestasInfantis.WinApp.ModuloTema
             Itens = itens;
             Aluguel = aluguel;
         }
+
+        public override List<string> Validar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void AtualizarRegistro(EntidadeBase novoRegistro)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

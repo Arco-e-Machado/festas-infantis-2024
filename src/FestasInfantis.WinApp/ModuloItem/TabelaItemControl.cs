@@ -29,7 +29,7 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             foreach (Item i in itens)
             {
-                grid.Rows.Add(i.Id, i.Nome, i.Descricao, i.Valor);
+                grid.Rows.Add(i.Id, i.Descricao, i.Valor);
             }
         }
 
