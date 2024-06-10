@@ -7,12 +7,10 @@ namespace FestasInfantis.WinApp.ModuloTema
     public class Tema : EntidadeBase
     {
         public string Nome { get; set; }
-        public List<Item> Itens;
 
-        public Tema( string Nome, List<Item> itens)
+        public Tema( string nome)
         {
             Nome = Nome;
-            Itens = itens;
         }
 
         public override List<string> Validar()

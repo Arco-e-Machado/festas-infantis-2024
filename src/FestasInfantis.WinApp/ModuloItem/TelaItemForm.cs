@@ -31,7 +31,7 @@ namespace FestasInfantis.WinApp.ModuloItem
             InitializeComponent();
         }
 
-        private TelaItemForm(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             string descricao = txtDescricao.Text;
             decimal valor = txtValor.Value;

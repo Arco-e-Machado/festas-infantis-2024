@@ -41,6 +41,7 @@
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
             grid.ReadOnly = true;
+            grid.RowHeadersVisible = false;
             grid.RowHeadersWidth = 51;
             grid.Size = new Size(580, 265);
             grid.TabIndex = 0;

@@ -29,17 +29,11 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             InitializeComponent();
         }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-
             string nome = txtNome.Text;
-            List<Item> itens = new List<Item>();
 
-            tema = new Tema(nome, itens);
+            tema = new Tema(nome);
         }
-
     }
 }

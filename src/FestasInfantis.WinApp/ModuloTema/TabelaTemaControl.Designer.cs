@@ -39,18 +39,22 @@
             grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grid.Dock = DockStyle.Fill;
             grid.Location = new Point(0, 0);
+            grid.Margin = new Padding(3, 4, 3, 4);
             grid.Name = "grid";
             grid.ReadOnly = true;
-            grid.Size = new Size(473, 226);
+            grid.RowHeadersVisible = false;
+            grid.RowHeadersWidth = 51;
+            grid.Size = new Size(541, 301);
             grid.TabIndex = 0;
             // 
             // TabelaTemaControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TabelaTemaControl";
-            Size = new Size(473, 226);
+            Size = new Size(541, 301);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

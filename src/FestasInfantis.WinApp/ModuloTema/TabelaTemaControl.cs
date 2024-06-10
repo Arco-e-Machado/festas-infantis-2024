@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eAgenda.WinApp.Compartilhado;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,24 @@ namespace FestasInfantis.WinApp.ModuloTema
         public TabelaTemaControl()
         {
             InitializeComponent();
+
+            grid.Columns.AddRange(CriarColunas());
+
+            grid.ConfigurarGridSomenteLeitura();
+            grid.ConfigurarGridZebrado();
         }
 
         internal void AtualizarRegistros(List<Tema> temas)
         {
             throw new NotImplementedException();
+        }
+
+        private DataGridViewColumn[] CriarColunas()
+        {
+            return new DataGridViewColumn[]                 {
+                new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" }
+                };
         }
     }
 }

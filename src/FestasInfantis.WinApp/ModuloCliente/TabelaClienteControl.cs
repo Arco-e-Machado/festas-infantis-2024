@@ -19,7 +19,8 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             grid.Columns.AddRange(criarColunas());
 
-            grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            grid.ConfigurarGridSomenteLeitura();
+            grid.ConfigurarGridZebrado();
 
         }
         public void AtualizarRegistros(List<Cliente> clientes)

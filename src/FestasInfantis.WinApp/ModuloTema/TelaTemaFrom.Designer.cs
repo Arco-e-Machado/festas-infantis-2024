@@ -44,18 +44,19 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(56, 47);
+            lblId.Location = new Point(64, 63);
             lblId.Name = "lblId";
-            lblId.Size = new Size(20, 15);
+            lblId.Size = new Size(25, 20);
             lblId.TabIndex = 0;
             lblId.Text = "Id:";
             // 
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(82, 47);
+            txtId.Location = new Point(94, 63);
+            txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.Name = "txtId";
-            txtId.Size = new Size(68, 23);
+            txtId.Size = new Size(77, 27);
             txtId.TabIndex = 1;
             txtId.Text = "0";
             txtId.TextAlign = HorizontalAlignment.Right;
@@ -63,27 +64,29 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(33, 76);
+            lblNome.Location = new Point(38, 101);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
+            lblNome.Size = new Size(53, 20);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(82, 76);
+            txtNome.Location = new Point(94, 101);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(295, 23);
+            txtNome.Size = new Size(337, 27);
             txtNome.TabIndex = 1;
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(TabDBasicos);
             tabControl1.Controls.Add(TabSItens);
-            tabControl1.Location = new Point(12, 75);
+            tabControl1.Location = new Point(14, 100);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(504, 267);
+            tabControl1.Size = new Size(576, 356);
             tabControl1.TabIndex = 2;
             // 
             // TabDBasicos
@@ -92,50 +95,58 @@
             TabDBasicos.Controls.Add(txtNome);
             TabDBasicos.Controls.Add(lblId);
             TabDBasicos.Controls.Add(lblNome);
-            TabDBasicos.Location = new Point(4, 24);
+            TabDBasicos.Location = new Point(4, 29);
+            TabDBasicos.Margin = new Padding(3, 4, 3, 4);
             TabDBasicos.Name = "TabDBasicos";
-            TabDBasicos.Padding = new Padding(3);
-            TabDBasicos.Size = new Size(496, 239);
+            TabDBasicos.Padding = new Padding(3, 4, 3, 4);
+            TabDBasicos.Size = new Size(568, 323);
             TabDBasicos.TabIndex = 0;
             TabDBasicos.Text = "Dados Básicos";
             TabDBasicos.UseVisualStyleBackColor = true;
             // 
             // TabSItens
             // 
-            TabSItens.Location = new Point(4, 24);
+            TabSItens.Location = new Point(4, 29);
+            TabSItens.Margin = new Padding(3, 4, 3, 4);
             TabSItens.Name = "TabSItens";
-            TabSItens.Padding = new Padding(3);
-            TabSItens.Size = new Size(496, 239);
+            TabSItens.Padding = new Padding(3, 4, 3, 4);
+            TabSItens.Size = new Size(568, 323);
             TabSItens.TabIndex = 1;
             TabSItens.Text = "Seleção de Itens";
             TabSItens.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(430, 348);
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(491, 464);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(86, 40);
+            btnCancelar.Size = new Size(98, 53);
             btnCancelar.TabIndex = 11;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(338, 348);
+            btnSalvar.DialogResult = DialogResult.OK;
+            btnSalvar.Location = new Point(386, 464);
+            btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(86, 40);
+            btnSalvar.Size = new Size(98, 53);
             btnSalvar.TabIndex = 10;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // TelaTemaFrom
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(528, 400);
+            ClientSize = new Size(603, 533);
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
             Controls.Add(tabControl1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaTemaFrom";
             Text = "TelaTemaFrom";
             tabControl1.ResumeLayout(false);

@@ -1,6 +1,8 @@
 using eAgenda.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloAluguel;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloItem;
+using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp
 {
@@ -9,6 +11,8 @@ namespace FestasInfantis.WinApp
         ControladorBase controlador;
         RepositorioCliente repositorioCliente;
         RepositorioAluguel repositorioAluguel;
+        RepositorioItem repositorioItens;
+        RepositorioTema repositorioTema;
         public static TelaPrincipalForm Instancia { get; private set; }
 
         public TelaPrincipalForm()
@@ -20,6 +24,8 @@ namespace FestasInfantis.WinApp
 
             repositorioCliente = new RepositorioCliente();
             repositorioAluguel = new RepositorioAluguel();
+            repositorioItens = new RepositorioItem();
+            repositorioTema = new RepositorioTema();
         }
 
         public void AtualizarRodape(string texto)
@@ -82,8 +88,36 @@ namespace FestasInfantis.WinApp
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if(controlador is IControladorFiltravel controladorFiltravel)
-            controladorFiltravel.Filtrar();
+            if (controlador is IControladorFiltravel controladorFiltravel)
+                controladorFiltravel.Filtrar();
+        }
+
+        private void clienteMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorCliente(repositorioCliente);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void AluguelMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorAluguel(repositorioAluguel);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void TemaMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorTema(repositorioTema);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void ItemsMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorItem(repositorioItens);
+
+            ConfigurarTelaPrincipal(controlador);
         }
     }
 }

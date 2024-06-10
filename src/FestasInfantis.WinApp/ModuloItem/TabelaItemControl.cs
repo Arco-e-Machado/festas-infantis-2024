@@ -20,7 +20,8 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             grid.Columns.AddRange(CriarColuna());
 
-            grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            grid.ConfigurarGridSomenteLeitura();
+            grid.ConfigurarGridZebrado();
 
         }
         public void AtualizarRegistros(List<Item> itens)
@@ -29,7 +30,7 @@ namespace FestasInfantis.WinApp.ModuloItem
 
             foreach (Item i in itens)
             {
-                grid.Rows.Add(i.Id, i.Descricao, i.Valor);
+                grid.Rows.Add(i.Id, i.Descricao, i.Valor.ToString("C"));
             }
         }
 
@@ -42,7 +43,6 @@ namespace FestasInfantis.WinApp.ModuloItem
         {
             return new DataGridViewColumn[]{
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
-                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome"},
                 new DataGridViewTextBoxColumn { DataPropertyName = "Descricao", HeaderText = "Descrição"},
                 new DataGridViewTextBoxColumn { DataPropertyName = "Valor", HeaderText = "Valor"},
             };

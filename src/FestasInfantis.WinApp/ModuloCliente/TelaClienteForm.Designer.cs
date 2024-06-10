@@ -46,7 +46,7 @@
             lblId.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblId.Location = new Point(36, 37);
             lblId.Name = "lblId";
-            lblId.Size = new Size(23, 15);
+            lblId.Size = new Size(28, 20);
             lblId.TabIndex = 0;
             lblId.Text = "ID:";
             // 
@@ -56,7 +56,7 @@
             lblNome.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNome.Location = new Point(16, 69);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
+            lblNome.Size = new Size(55, 20);
             lblNome.TabIndex = 1;
             lblNome.Text = "Nome:";
             // 
@@ -66,7 +66,7 @@
             lblCpf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCpf.Location = new Point(29, 100);
             lblCpf.Name = "lblCpf";
-            lblCpf.Size = new Size(30, 15);
+            lblCpf.Size = new Size(39, 20);
             lblCpf.TabIndex = 2;
             lblCpf.Text = "CPF:";
             // 
@@ -76,7 +76,7 @@
             lblTelefone.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTelefone.Location = new Point(4, 131);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(55, 15);
+            lblTelefone.Size = new Size(71, 20);
             lblTelefone.TabIndex = 3;
             lblTelefone.Text = "Telefone:";
             // 
@@ -84,11 +84,12 @@
             // 
             txtId.BackColor = SystemColors.ButtonFace;
             txtId.BorderStyle = BorderStyle.FixedSingle;
+            txtId.Enabled = false;
             txtId.Font = new Font("Segoe UI", 9.75F);
             txtId.Location = new Point(65, 33);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(61, 25);
+            txtId.Size = new Size(61, 29);
             txtId.TabIndex = 0;
             // 
             // txtNome
@@ -96,7 +97,7 @@
             txtNome.Font = new Font("Segoe UI", 9.75F);
             txtNome.Location = new Point(65, 64);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(449, 25);
+            txtNome.Size = new Size(449, 29);
             txtNome.TabIndex = 1;
             // 
             // txtCpf
@@ -104,7 +105,7 @@
             txtCpf.Font = new Font("Segoe UI", 9.75F);
             txtCpf.Location = new Point(65, 95);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(171, 25);
+            txtCpf.Size = new Size(171, 29);
             txtCpf.TabIndex = 2;
             txtCpf.Text = "___.___.___-__";
             txtCpf.TextChanged += txtCpf_TextChanged;
@@ -114,22 +115,24 @@
             txtFone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFone.Location = new Point(65, 126);
             txtFone.Name = "txtFone";
-            txtFone.Size = new Size(171, 25);
+            txtFone.Size = new Size(171, 29);
             txtFone.TabIndex = 3;
             txtFone.Text = "(__) _____-____";
             // 
             // btnSalvar
             // 
+            btnSalvar.DialogResult = DialogResult.OK;
             btnSalvar.Location = new Point(336, 122);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(86, 40);
             btnSalvar.TabIndex = 4;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Click += button1_Click;
+            btnSalvar.Click += button_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(428, 122);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(86, 40);
@@ -139,7 +142,7 @@
             // 
             // TelaClienteForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(517, 165);
             Controls.Add(btnCancelar);

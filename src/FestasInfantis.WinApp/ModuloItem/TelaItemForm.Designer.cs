@@ -71,6 +71,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(463, 129);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(86, 40);
@@ -80,12 +81,14 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.DialogResult = DialogResult.OK;
             btnSalvar.Location = new Point(371, 129);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(86, 40);
             btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // txtDescricao
             // 

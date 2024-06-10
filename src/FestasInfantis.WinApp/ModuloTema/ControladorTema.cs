@@ -12,6 +12,11 @@ namespace FestasInfantis.WinApp.ModuloTema
     {
         RepositorioTema repositorioTema;
         TabelaTemaControl tabelaTema;
+
+        public ControladorTema(RepositorioTema repositorio)
+        {
+            repositorioTema = repositorio;
+        }
         public override string TipoCadastro { get { return "Tema"; } }
 
         public override string ToolTipAdicionar { get { return "Adicionar um novo tema"; } }

@@ -17,6 +17,11 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public TabelaAluguelControl()
         {
             InitializeComponent();
+
+            grid.Columns.AddRange(CriarColunas());
+
+            grid.ConfigurarGridSomenteLeitura();
+            grid.ConfigurarGridZebrado();
         }
 
         public void AtualizarRegistros(List<Aluguel> alugueis)
@@ -34,7 +39,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             return grid.SelecionarId();
         }
 
-        private DataGridViewColumn[] criarColunas()
+        private DataGridViewColumn[] CriarColunas()
         {
             return new DataGridViewColumn[]                 {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
