@@ -35,6 +35,10 @@ namespace FestasInfantis.WinApp.ModuloCliente
             return $"Nome: {Nome} | Telefone: {Telefone} |  Cpf: {Cpf}";
         }
 
+        public void ListarAlugueis(Aluguel aluguel)
+        {
+            alugueis.Add(aluguel);
+        }
 
         public override List<string> Validar()
         {

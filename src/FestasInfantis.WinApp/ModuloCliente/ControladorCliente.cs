@@ -1,5 +1,6 @@
 ﻿using eAgenda.WinApp.Compartilhado;
 using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         public override string ToolTipExcluir { get { return "Excluir um cadastro cliente"; } }
 
-        public string ToolTipVisualizarAluguel {get{ return "Visualizar Aluguéis do Cliente"; }}
+        public string ToolTipVisualizarAluguel { get { return "Visualizar Aluguéis do Cliente"; } }
 
         public override void Adicionar()
         {
@@ -101,7 +102,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
             repositorioCliente.Excluir(clienteSelecionado.Id);
             CarregarClientes();
 
-        } 
+        }
 
         public override UserControl ObterListagem()
         {
@@ -121,6 +122,8 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             Cliente clienteSelecionado = repositorioCliente.SelecionarPorId(idSelecionado);
 
+            telaAluguel.ConfigurarTelaClienteAluguel(clienteSelecionado);
+
             if (clienteSelecionado == null)
             {
                 MessageBox.Show(
@@ -134,6 +137,16 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
             if (resultado != DialogResult.OK) return;
 
+            CarregarClienteAlugueis(clienteSelecionado);
+        }
+
+        private void CarregarClienteAlugueis(Cliente cliente)
+        {
+            List<Aluguel> Alugueis = cliente.alugueis;
+            foreach (Aluguel A in Alugueis)
+            {
+                Alugueis.Add(A);
+            }
         }
 
         private void CarregarClientes()

@@ -31,7 +31,7 @@
             lblId = new Label();
             txtId = new TextBox();
             lblCliente = new Label();
-            txtCliente = new TextBox();
+            txtClienteAluguel = new TextBox();
             grid = new DataGridView();
             btnOk = new Button();
             ((System.ComponentModel.ISupportInitialize)grid).BeginInit();
@@ -63,12 +63,13 @@
             lblCliente.TabIndex = 0;
             lblCliente.Text = "Cliente";
             // 
-            // txtCliente
+            // txtClienteAluguel
             // 
-            txtCliente.Location = new Point(89, 71);
-            txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(355, 23);
-            txtCliente.TabIndex = 1;
+            txtClienteAluguel.Enabled = false;
+            txtClienteAluguel.Location = new Point(89, 71);
+            txtClienteAluguel.Name = "txtClienteAluguel";
+            txtClienteAluguel.Size = new Size(355, 23);
+            txtClienteAluguel.TabIndex = 1;
             // 
             // grid
             // 
@@ -95,7 +96,7 @@
             ClientSize = new Size(523, 372);
             Controls.Add(btnOk);
             Controls.Add(grid);
-            Controls.Add(txtCliente);
+            Controls.Add(txtClienteAluguel);
             Controls.Add(lblCliente);
             Controls.Add(txtId);
             Controls.Add(lblId);
@@ -111,7 +112,7 @@
         private Label lblId;
         private TextBox txtId;
         private Label lblCliente;
-        private TextBox txtCliente;
+        private TextBox txtClienteAluguel;
         private DataGridView grid;
         private Button btnOk;
     }

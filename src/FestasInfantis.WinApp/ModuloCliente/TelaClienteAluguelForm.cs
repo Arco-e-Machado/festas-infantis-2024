@@ -14,6 +14,8 @@ namespace FestasInfantis.WinApp.ModuloCliente
 {
     public partial class TelaClienteAluguelForm : Form
     {
+
+
         public TelaClienteAluguelForm()
         {
             InitializeComponent();
@@ -30,7 +32,14 @@ namespace FestasInfantis.WinApp.ModuloCliente
             foreach (Aluguel a in alugueis)
             {
                 grid.Rows.Add(a.Id, a.Tema, a.PorcentagemSaida, a.DataPagamento);
+
             }
+        }
+
+        public void ConfigurarTelaClienteAluguel(Cliente cliente)
+        {
+            txtId.Text = cliente.Id.ToString();
+            txtClienteAluguel.Text = cliente.Nome;
         }
 
         public int ObterRegistroSelecionado()

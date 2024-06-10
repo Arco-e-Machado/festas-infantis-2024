@@ -15,7 +15,8 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public decimal PorcentagemEntrada { get; set; }
         public DateTime DataPagamento { get; set; }
 
-        public Aluguel(Cliente cliente, Tema tema, Festa festa, bool status, decimal saida, decimal entrada, DateTime pagamento)
+
+        public Aluguel(Cliente cliente, Tema tema, Festa festa, bool status, decimal saida, decimal entrada, DateTime pagamento, Cliente repositorio)
         {
             Cliente = cliente;
             Tema = tema;
@@ -24,6 +25,8 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             PorcentagemSaida = saida;
             PorcentagemEntrada = entrada;
             DataPagamento = pagamento;
+            repositorio.ListarAlugueis(this);
+
 
         }
         public override void AtualizarRegistro(EntidadeBase novoRegistro)

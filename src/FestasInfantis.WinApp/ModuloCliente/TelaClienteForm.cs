@@ -39,7 +39,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
             string nome = txtNome.Text;
             string telefone = txtFone.Text;
             string cpf = txtCpf.Text;
-
+            
             cliente = new Cliente(nome, telefone, cpf);
         }
 
