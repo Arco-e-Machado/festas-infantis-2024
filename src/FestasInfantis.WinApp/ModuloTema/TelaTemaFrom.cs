@@ -21,11 +21,9 @@ namespace FestasInfantis.WinApp.ModuloTema
             set
             {
                 txtId.Text = value.Id.ToString();
-                txt1.Text = value.ValorTotal;
-                txt2.Text = value.Nome;
-                txt3.value = value.Aluguel;
-                txt4.value = value.Itens;
+                txtNome.Text = value.Nome;
             }
+            get { return tema; }
         }
         public TelaTemaFrom()
         {
@@ -36,12 +34,11 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         private void button1_Click(object sender, EventArgs e)
         {
-            decimal valor = txt1.Text;
-            string nome = txt2.Text;
-            Aluguel aluguel = txt3.value;
-            Item item = txt4.value;
 
-            tema = new Tema(valor, nome, item, aluguel);
+            string nome = txtNome.Text;
+            List<Item> itens = new List<Item>();
+
+            tema = new Tema(nome, itens);
         }
 
     }

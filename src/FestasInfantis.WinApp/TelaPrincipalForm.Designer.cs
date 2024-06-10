@@ -30,7 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
-            contatosMenuItem = new ToolStripMenuItem();
+            clienteMenuItem = new ToolStripMenuItem();
             compromissosMenuItem = new ToolStripMenuItem();
             tarefasToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -68,16 +68,16 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, compromissosMenuItem, tarefasToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteMenuItem, compromissosMenuItem, tarefasToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(86, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
-            // contatosMenuItem
+            // clienteMenuItem
             // 
-            contatosMenuItem.Name = "contatosMenuItem";
-            contatosMenuItem.Size = new Size(176, 24);
-            contatosMenuItem.Text = "Contatos";
+            clienteMenuItem.Name = "clienteMenuItem";
+            clienteMenuItem.Size = new Size(176, 24);
+            clienteMenuItem.Text = "Clientes";
             // 
             // compromissosMenuItem
             // 
@@ -128,6 +128,7 @@
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Padding = new Padding(5);
             btnAdicionar.Size = new Size(38, 38);
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnEditar
             // 
@@ -139,6 +140,7 @@
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(5);
             btnEditar.Size = new Size(38, 38);
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -150,6 +152,7 @@
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(5);
             btnExcluir.Size = new Size(38, 38);
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
             // 
@@ -166,6 +169,7 @@
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.Padding = new Padding(5);
             btnFiltrar.Size = new Size(38, 38);
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // toolStripSeparator3
             // 
@@ -260,7 +264,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Festas Infantis";
             UseWaitCursor = true;
-            Load += TelaPrincipalForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
@@ -275,7 +278,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
-        private ToolStripMenuItem contatosMenuItem;
+        private ToolStripMenuItem clienteMenuItem;
         private ToolStripMenuItem compromissosMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel statusLabelPrincipal;

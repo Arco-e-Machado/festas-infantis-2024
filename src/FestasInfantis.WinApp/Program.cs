@@ -1,3 +1,6 @@
+using FestasInfantis.WinApp.ModuloAluguel;
+using FestasInfantis.WinApp.ModuloCliente;
+
 namespace FestasInfantis.WinApp
 {
     internal static class Program

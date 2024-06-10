@@ -35,6 +35,13 @@ namespace FestasInfantis.WinApp.ModuloTema
             CarregarTema();
         }
 
+        private void CarregarTema()
+        {
+            List<Tema> temas = repositorioTema.SelecionarTodos();
+
+            tabelaTema.AtualizarRegistros(temas);
+        }
+
         public override void Editar()
         {
             throw new NotImplementedException();

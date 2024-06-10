@@ -16,5 +16,10 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             InitializeComponent();
         }
+
+        internal void AtualizarRegistros(List<Tema> temas)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

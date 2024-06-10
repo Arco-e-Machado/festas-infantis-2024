@@ -6,17 +6,13 @@ namespace FestasInfantis.WinApp.ModuloTema
 {
     public class Tema : EntidadeBase
     {
-        public decimal ValorTotal { get; set; }
         public string Nome { get; set; }
-        public Item Itens;
-        public Aluguel Aluguel;
+        public List<Item> Itens;
 
-        public Tema(decimal valorTotal, string Nome, Item itens, Aluguel aluguel)
+        public Tema( string Nome, List<Item> itens)
         {
-            ValorTotal = valorTotal;
             Nome = Nome;
             Itens = itens;
-            Aluguel = aluguel;
         }
 
         public override List<string> Validar()
