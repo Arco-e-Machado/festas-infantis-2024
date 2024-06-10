@@ -1,4 +1,5 @@
 using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloAluguel;
 using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloItem;
@@ -48,6 +49,7 @@ namespace FestasInfantis.WinApp
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
             btnFiltrar.Enabled = controladorSelecionado is IControladorFiltravel;
+            btnVisualizarAlugueis.Enabled = controladorSelecionado is IControladorClienteAluguel;
 
             ConfigurarToolTips(controladorSelecionado);
         }
@@ -60,6 +62,8 @@ namespace FestasInfantis.WinApp
 
             if (controladorSelecionado is IControladorFiltravel controladorFiltravel)
                 btnFiltrar.ToolTipText = controladorFiltravel.ToolTipFiltrar;
+            else if (controladorSelecionado is IControladorClienteAluguel controladorAluguel)
+                btnVisualizarAlugueis.ToolTipText = controladorAluguel.ToolTipVisualizarAluguel;
         }
 
         private void ConfigurarListagem(ControladorBase controladorSelecionado)
@@ -92,6 +96,12 @@ namespace FestasInfantis.WinApp
                 controladorFiltravel.Filtrar();
         }
 
+        private void btnVisualizarAlugueis_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorClienteAluguel controladorAluguel)
+                controladorAluguel.VisualizarAluguel();
+        }
+
         private void clienteMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCliente(repositorioCliente);
@@ -119,5 +129,6 @@ namespace FestasInfantis.WinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+
     }
 }

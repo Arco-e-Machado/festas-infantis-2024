@@ -1,4 +1,5 @@
 ﻿using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloCliente
 {
-    public class ControladorCliente : ControladorBase
+    public class ControladorCliente : ControladorBase, IControladorClienteAluguel
     {
         RepositorioCliente repositorioCliente;
         TabelaClienteControl tabelaCliente;
@@ -24,6 +25,8 @@ namespace FestasInfantis.WinApp.ModuloCliente
         public override string ToolTipEditar { get { return "Editar um cadastro cliente"; } }
 
         public override string ToolTipExcluir { get { return "Excluir um cadastro cliente"; } }
+
+        public string ToolTipVisualizarAluguel {get{ return "Visualizar Aluguéis do Cliente"; }}
 
         public override void Adicionar()
         {
@@ -108,6 +111,29 @@ namespace FestasInfantis.WinApp.ModuloCliente
             CarregarClientes();
 
             return tabelaCliente;
+        }
+
+        public void VisualizarAluguel()
+        {
+            TelaClienteAluguelForm telaAluguel = new TelaClienteAluguelForm();
+
+            int idSelecionado = tabelaCliente.ObterRegistroSelecionado();
+
+            Cliente clienteSelecionado = repositorioCliente.SelecionarPorId(idSelecionado);
+
+            if (clienteSelecionado == null)
+            {
+                MessageBox.Show(
+                              "Não é possível realizar esta ação sem um registro selecionado.",
+                             "Aviso",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Warning
+                         ); return;
+            }
+            DialogResult resultado = telaAluguel.ShowDialog();
+
+            if (resultado != DialogResult.OK) return;
+
         }
 
         private void CarregarClientes()

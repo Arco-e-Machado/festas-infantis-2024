@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.Compartilhado
 {
-    public interface IControladorAluguel
+    public interface IControladorClienteAluguel
     {
         string ToolTipVisualizarAluguel { get; }
-        string ToolTipConcluirAluguel { get; }
-        string ToolTipConfigurarDesconto { get; }
 
         void VisualizarAluguel();
-        void ConcluirAluguel();
-        void ConfigurarDesconto();
     }
 }
