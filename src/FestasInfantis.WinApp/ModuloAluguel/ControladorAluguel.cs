@@ -1,5 +1,8 @@
 ﻿using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel.ModuloFesta;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloTema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +13,19 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 {
     public class ControladorAluguel : ControladorBase
     {
-        RepositorioAluguel repositorioAluguel;
+        IRepositorioAluguel repositorioAluguel;
+        IRepositorioCliente repositorioClientes;
+        IRepositorioTema repositorioTemas;
+        IRepositorioFestas repositorioFestas;
+
         TabelaAluguelControl tabelaAluguel;
 
-        public ControladorAluguel(RepositorioAluguel repositorio)
+        public ControladorAluguel(IRepositorioAluguel a, IRepositorioCliente c, IRepositorioTema t, IRepositorioFestas f)
         {
-            repositorioAluguel = repositorio;
+            repositorioAluguel = a;
+            repositorioClientes = c;
+            repositorioTemas = t;
+            repositorioFestas = f;
         }
         public override string TipoCadastro { get { return "Aluguel"; } }
 
@@ -29,7 +39,10 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         {
             TelaAluguelForm telaAluguel = new TelaAluguelForm();
 
+            CarregarDados(telaAluguel);
+
             DialogResult resultado = telaAluguel.ShowDialog();
+
             if (resultado != DialogResult.OK) return;
 
             Aluguel novoAluguel = telaAluguel.Aluguel;
@@ -39,18 +52,13 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             CarregarAlugueis();
         }
 
-        private void CarregarAlugueis()
-        {
-            List<Aluguel> alugueis = repositorioAluguel.SelecionarTodos();
-
-            tabelaAluguel.AtualizarRegistros(alugueis);
-        }
-
         public override void Editar()
         {
             TelaAluguelForm telaAluguel = new TelaAluguelForm();
 
             int idSelecionado = tabelaAluguel.ObterRegistroSelecionado();
+
+            CarregarDados(telaAluguel);
 
             Aluguel aluguelSelecionado = repositorioAluguel.SelecionarPorId(idSelecionado);
 
@@ -100,7 +108,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
             if (resultado != DialogResult.Yes) return;
 
-            repositorioAluguel.Excluir(idSelecionado) ;
+            repositorioAluguel.Excluir(idSelecionado);
             CarregarAlugueis();
 
         }
@@ -113,6 +121,22 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             CarregarAlugueis();
 
             return tabelaAluguel;
+        }
+
+        private void CarregarAlugueis()
+        {
+            List<Aluguel> alugueis = repositorioAluguel.SelecionarTodos();
+
+            tabelaAluguel.AtualizarRegistros(alugueis);
+        }
+
+        void CarregarDados(TelaAluguelForm tela)
+        {
+            List<Cliente> clientes = repositorioClientes.SelecionarTodos();
+
+            List<Tema> temas = repositorioTemas.SelecionarTodos();
+
+            tela.MostrarDados(clientes, temas);
         }
     }
 }

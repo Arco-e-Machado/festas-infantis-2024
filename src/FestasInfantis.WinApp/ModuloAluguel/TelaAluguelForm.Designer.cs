@@ -33,11 +33,11 @@
             tabCadastroAlugueis = new TabControl();
             tabDadosFesta = new TabPage();
             groupBox2 = new GroupBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            txtDescricao = new TextBox();
+            txtBairro = new TextBox();
+            txtNumero = new TextBox();
+            txtEstado = new TextBox();
+            txtCidade = new TextBox();
+            txtRua = new TextBox();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -45,8 +45,6 @@
             label4 = new Label();
             groupBox1 = new GroupBox();
             pictureBox1 = new PictureBox();
-            txtHorarioTermino = new TextBox();
-            txtHorarioInicio = new TextBox();
             DtpData = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
@@ -63,14 +61,16 @@
             label15 = new Label();
             label13 = new Label();
             label12 = new Label();
-            txtStatus = new ComboBox();
+            cmbStatus = new ComboBox();
             lblStatus = new Label();
-            txtTema = new ComboBox();
-            txtCliente = new ComboBox();
+            cmbTema = new ComboBox();
+            cmbCliente = new ComboBox();
             lblTema = new Label();
             lblCliente = new Label();
             btnCancelar = new Button();
             btnSalvar = new Button();
+            dtHorarioInicio = new DateTimePicker();
+            dtHorarioTermino = new DateTimePicker();
             tabCadastroAlugueis.SuspendLayout();
             tabDadosFesta.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -118,7 +118,7 @@
             tabDadosFesta.Controls.Add(groupBox1);
             tabDadosFesta.Location = new Point(4, 24);
             tabDadosFesta.Name = "tabDadosFesta";
-            tabDadosFesta.Padding = new Padding(3, 3, 3, 3);
+            tabDadosFesta.Padding = new Padding(3);
             tabDadosFesta.Size = new Size(470, 330);
             tabDadosFesta.TabIndex = 0;
             tabDadosFesta.Text = "Dados Da Festa";
@@ -126,11 +126,11 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox4);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Controls.Add(txtDescricao);
+            groupBox2.Controls.Add(txtBairro);
+            groupBox2.Controls.Add(txtNumero);
+            groupBox2.Controls.Add(txtEstado);
+            groupBox2.Controls.Add(txtCidade);
+            groupBox2.Controls.Add(txtRua);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label6);
@@ -144,40 +144,40 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Dados do Endereço:";
             // 
-            // textBox4
+            // txtBairro
             // 
-            textBox4.Location = new Point(56, 108);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(193, 25);
-            textBox4.TabIndex = 6;
+            txtBairro.Location = new Point(56, 108);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(193, 25);
+            txtBairro.TabIndex = 6;
             // 
-            // textBox3
+            // txtNumero
             // 
-            textBox3.Location = new Point(315, 108);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 25);
-            textBox3.TabIndex = 7;
+            txtNumero.Location = new Point(315, 108);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(100, 25);
+            txtNumero.TabIndex = 7;
             // 
-            // textBox2
+            // txtEstado
             // 
-            textBox2.Location = new Point(315, 38);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 25);
-            textBox2.TabIndex = 4;
+            txtEstado.Location = new Point(315, 38);
+            txtEstado.Name = "txtEstado";
+            txtEstado.Size = new Size(100, 25);
+            txtEstado.TabIndex = 4;
             // 
-            // textBox1
+            // txtCidade
             // 
-            textBox1.Location = new Point(56, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(193, 25);
-            textBox1.TabIndex = 3;
+            txtCidade.Location = new Point(56, 38);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(193, 25);
+            txtCidade.TabIndex = 3;
             // 
-            // txtDescricao
+            // txtRua
             // 
-            txtDescricao.Location = new Point(56, 74);
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(359, 25);
-            txtDescricao.TabIndex = 5;
+            txtRua.Location = new Point(56, 74);
+            txtRua.Name = "txtRua";
+            txtRua.Size = new Size(359, 25);
+            txtRua.TabIndex = 5;
             // 
             // label8
             // 
@@ -231,9 +231,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dtHorarioTermino);
+            groupBox1.Controls.Add(dtHorarioInicio);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(txtHorarioTermino);
-            groupBox1.Controls.Add(txtHorarioInicio);
             groupBox1.Controls.Add(DtpData);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
@@ -257,22 +257,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // txtHorarioTermino
-            // 
-            txtHorarioTermino.Location = new Point(124, 98);
-            txtHorarioTermino.Name = "txtHorarioTermino";
-            txtHorarioTermino.Size = new Size(105, 25);
-            txtHorarioTermino.TabIndex = 2;
-            txtHorarioTermino.Text = "__:__";
-            // 
-            // txtHorarioInicio
-            // 
-            txtHorarioInicio.Location = new Point(124, 67);
-            txtHorarioInicio.Name = "txtHorarioInicio";
-            txtHorarioInicio.Size = new Size(105, 25);
-            txtHorarioInicio.TabIndex = 1;
-            txtHorarioInicio.Text = "__:__";
             // 
             // DtpData
             // 
@@ -318,15 +302,15 @@
             // tabDadosAluguel
             // 
             tabDadosAluguel.Controls.Add(groupBox3);
-            tabDadosAluguel.Controls.Add(txtStatus);
+            tabDadosAluguel.Controls.Add(cmbStatus);
             tabDadosAluguel.Controls.Add(lblStatus);
-            tabDadosAluguel.Controls.Add(txtTema);
-            tabDadosAluguel.Controls.Add(txtCliente);
+            tabDadosAluguel.Controls.Add(cmbTema);
+            tabDadosAluguel.Controls.Add(cmbCliente);
             tabDadosAluguel.Controls.Add(lblTema);
             tabDadosAluguel.Controls.Add(lblCliente);
             tabDadosAluguel.Location = new Point(4, 24);
             tabDadosAluguel.Name = "tabDadosAluguel";
-            tabDadosAluguel.Padding = new Padding(3, 3, 3, 3);
+            tabDadosAluguel.Padding = new Padding(3);
             tabDadosAluguel.Size = new Size(470, 330);
             tabDadosAluguel.TabIndex = 1;
             tabDadosAluguel.Text = "Dados Do Aluguel";
@@ -453,14 +437,14 @@
             label12.TabIndex = 0;
             label12.Text = "% de Desconto:";
             // 
-            // txtStatus
+            // cmbStatus
             // 
-            txtStatus.FormattingEnabled = true;
-            txtStatus.Location = new Point(78, 69);
-            txtStatus.Margin = new Padding(3, 2, 3, 2);
-            txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(133, 23);
-            txtStatus.TabIndex = 1;
+            cmbStatus.FormattingEnabled = true;
+            cmbStatus.Location = new Point(78, 69);
+            cmbStatus.Margin = new Padding(3, 2, 3, 2);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(133, 23);
+            cmbStatus.TabIndex = 1;
             // 
             // lblStatus
             // 
@@ -471,23 +455,23 @@
             lblStatus.TabIndex = 0;
             lblStatus.Text = "Sinal:";
             // 
-            // txtTema
+            // cmbTema
             // 
-            txtTema.FormattingEnabled = true;
-            txtTema.Location = new Point(295, 35);
-            txtTema.Margin = new Padding(3, 2, 3, 2);
-            txtTema.Name = "txtTema";
-            txtTema.Size = new Size(133, 23);
-            txtTema.TabIndex = 1;
+            cmbTema.FormattingEnabled = true;
+            cmbTema.Location = new Point(295, 35);
+            cmbTema.Margin = new Padding(3, 2, 3, 2);
+            cmbTema.Name = "cmbTema";
+            cmbTema.Size = new Size(133, 23);
+            cmbTema.TabIndex = 1;
             // 
-            // txtCliente
+            // cmbCliente
             // 
-            txtCliente.FormattingEnabled = true;
-            txtCliente.Location = new Point(78, 35);
-            txtCliente.Margin = new Padding(3, 2, 3, 2);
-            txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(133, 23);
-            txtCliente.TabIndex = 1;
+            cmbCliente.FormattingEnabled = true;
+            cmbCliente.Location = new Point(78, 35);
+            cmbCliente.Margin = new Padding(3, 2, 3, 2);
+            cmbCliente.Name = "cmbCliente";
+            cmbCliente.Size = new Size(133, 23);
+            cmbCliente.TabIndex = 1;
             // 
             // lblTema
             // 
@@ -509,6 +493,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(403, 406);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(86, 40);
@@ -518,12 +503,38 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.DialogResult = DialogResult.OK;
             btnSalvar.Location = new Point(311, 406);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(86, 40);
             btnSalvar.TabIndex = 8;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // dtHorarioInicio
+            // 
+            dtHorarioInicio.CalendarMonthBackground = Color.Transparent;
+            dtHorarioInicio.CustomFormat = "HH:mm";
+            dtHorarioInicio.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtHorarioInicio.Format = DateTimePickerFormat.Custom;
+            dtHorarioInicio.Location = new Point(124, 71);
+            dtHorarioInicio.Name = "dtHorarioInicio";
+            dtHorarioInicio.RightToLeft = RightToLeft.No;
+            dtHorarioInicio.Size = new Size(105, 23);
+            dtHorarioInicio.TabIndex = 4;
+            // 
+            // dtHorarioTermino
+            // 
+            dtHorarioTermino.CalendarMonthBackground = Color.Transparent;
+            dtHorarioTermino.CustomFormat = "HH:mm";
+            dtHorarioTermino.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtHorarioTermino.Format = DateTimePickerFormat.Custom;
+            dtHorarioTermino.Location = new Point(124, 100);
+            dtHorarioTermino.Name = "dtHorarioTermino";
+            dtHorarioTermino.RightToLeft = RightToLeft.No;
+            dtHorarioTermino.Size = new Size(105, 23);
+            dtHorarioTermino.TabIndex = 5;
             // 
             // TelaAluguelForm
             // 
@@ -570,26 +581,24 @@
         private Label label2;
         private Label label1;
         private DateTimePicker DtpData;
-        private TextBox txtHorarioTermino;
-        private TextBox txtHorarioInicio;
         private PictureBox pictureBox1;
         private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label8;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox txtDescricao;
+        private TextBox txtBairro;
+        private TextBox txtNumero;
+        private TextBox txtEstado;
+        private TextBox txtCidade;
+        private TextBox txtRua;
         private Button btnCancelar;
         private Button btnSalvar;
         private Label lblCliente;
-        private ComboBox txtStatus;
+        private ComboBox cmbStatus;
         private Label lblStatus;
-        private ComboBox txtTema;
-        private ComboBox txtCliente;
+        private ComboBox cmbTema;
+        private ComboBox cmbCliente;
         private Label lblTema;
         private GroupBox groupBox3;
         private Label label12;
@@ -602,5 +611,7 @@
         private Label label14;
         private Label label15;
         private Label label13;
+        private DateTimePicker dtHorarioTermino;
+        private DateTimePicker dtHorarioInicio;
     }
 }

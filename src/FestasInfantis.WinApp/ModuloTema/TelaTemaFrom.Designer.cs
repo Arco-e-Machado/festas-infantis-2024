@@ -31,13 +31,16 @@
             btnCancelar = new Button();
             btnSalvar = new Button();
             TabDBasicos = new TabPage();
-            lblNome = new Label();
-            lblId = new Label();
-            txtNome = new TextBox();
             txtId = new TextBox();
+            txtNome = new TextBox();
+            lblId = new Label();
+            lblNome = new Label();
             tabControl1 = new TabControl();
+            TabItens = new TabPage();
+            ListItens = new CheckedListBox();
             TabDBasicos.SuspendLayout();
             tabControl1.SuspendLayout();
+            TabItens.SuspendLayout();
             SuspendLayout();
             // 
             // btnCancelar
@@ -75,31 +78,6 @@
             TabDBasicos.Text = "Dados Básicos";
             TabDBasicos.UseVisualStyleBackColor = true;
             // 
-            // lblNome
-            // 
-            lblNome.AutoSize = true;
-            lblNome.Location = new Point(33, 76);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
-            lblNome.TabIndex = 0;
-            lblNome.Text = "Nome:";
-            // 
-            // lblId
-            // 
-            lblId.AutoSize = true;
-            lblId.Location = new Point(56, 47);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(20, 15);
-            lblId.TabIndex = 0;
-            lblId.Text = "Id:";
-            // 
-            // txtNome
-            // 
-            txtNome.Location = new Point(82, 76);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(295, 23);
-            txtNome.TabIndex = 1;
-            // 
             // txtId
             // 
             txtId.Enabled = false;
@@ -110,14 +88,60 @@
             txtId.Text = "0";
             txtId.TextAlign = HorizontalAlignment.Right;
             // 
+            // txtNome
+            // 
+            txtNome.Location = new Point(82, 76);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(295, 23);
+            txtNome.TabIndex = 1;
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new Point(56, 47);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(20, 15);
+            lblId.TabIndex = 0;
+            lblId.Text = "Id:";
+            // 
+            // lblNome
+            // 
+            lblNome.AutoSize = true;
+            lblNome.Location = new Point(33, 76);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(43, 15);
+            lblNome.TabIndex = 0;
+            lblNome.Text = "Nome:";
+            // 
             // tabControl1
             // 
             tabControl1.Controls.Add(TabDBasicos);
+            tabControl1.Controls.Add(TabItens);
             tabControl1.Location = new Point(12, 75);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(504, 267);
             tabControl1.TabIndex = 2;
+            // 
+            // TabItens
+            // 
+            TabItens.Controls.Add(ListItens);
+            TabItens.Location = new Point(4, 24);
+            TabItens.Name = "TabItens";
+            TabItens.Padding = new Padding(3);
+            TabItens.Size = new Size(496, 239);
+            TabItens.TabIndex = 1;
+            TabItens.Text = "Lista de Itens";
+            TabItens.UseVisualStyleBackColor = true;
+            // 
+            // ListItens
+            // 
+            ListItens.Dock = DockStyle.Fill;
+            ListItens.FormattingEnabled = true;
+            ListItens.Location = new Point(3, 3);
+            ListItens.Name = "ListItens";
+            ListItens.Size = new Size(490, 233);
+            ListItens.TabIndex = 0;
             // 
             // TelaTemaFrom
             // 
@@ -133,6 +157,7 @@
             TabDBasicos.ResumeLayout(false);
             TabDBasicos.PerformLayout();
             tabControl1.ResumeLayout(false);
+            TabItens.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -145,5 +170,7 @@
         private Label lblId;
         private Label lblNome;
         private TabControl tabControl1;
+        private TabPage TabItens;
+        private CheckedListBox ListItens;
     }
 }

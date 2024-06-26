@@ -32,10 +32,6 @@ namespace FestasInfantis.WinApp.ModuloCliente
             Cpf = atualizar.Cpf;
         }
 
-        public override string? ToString()
-        {
-            return $"{Nome}{Telefone}{Cpf}";
-        }
 
         public void ListarAlugueis(Aluguel aluguel)
         {
@@ -56,6 +52,10 @@ namespace FestasInfantis.WinApp.ModuloCliente
                 erros.Add("O campo \"Cpf\" é obrigatório.");
 
             return erros;
+        }
+        public override string? ToString()
+        {
+            return Nome;
         }
     }
 }

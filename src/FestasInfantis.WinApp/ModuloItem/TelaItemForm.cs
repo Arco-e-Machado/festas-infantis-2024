@@ -19,9 +19,9 @@ namespace FestasInfantis.WinApp.ModuloItem
             set
             {
 
-                lblId.Text = value.Id.ToString();
-                lblDescricao.Text = value.Descricao;
-                lblValor.Text = Convert.ToString(value.Valor);
+                txtId.Text = value.Id.ToString();
+                txtDescricao.Text = value.Descricao;
+                txtValor.Text = Convert.ToString(value.Valor);
 
             }
             get { return item; }

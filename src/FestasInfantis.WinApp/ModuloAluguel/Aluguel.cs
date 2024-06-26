@@ -9,13 +9,16 @@ namespace FestasInfantis.WinApp.ModuloAluguel
     {
         public Cliente Cliente { get; set; }
         public Tema Tema { get; set; }
-        public Festa Festa;
+        public Festa Festa { get; set; }
         public bool Status { get; set; }
         public decimal PorcentagemSaida { get; set; }
         public decimal PorcentagemEntrada { get; set; }
         public DateTime DataPagamento { get; set; }
 
+        public Aluguel()
+        {
 
+        }
         public Aluguel(Cliente cliente, Tema tema, Festa festa, bool status, decimal saida, decimal entrada, DateTime pagamento, Cliente repositorio)
         {
             Cliente = cliente;
