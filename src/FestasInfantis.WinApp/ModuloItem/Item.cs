@@ -6,11 +6,14 @@ namespace FestasInfantis.WinApp.ModuloItem
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
+        public bool Locado { get; set; }
 
-        public Item(string descricao, decimal valor)
+        public Item() { }
+        public Item(string descricao, decimal valor, bool locado)
         {
             Descricao = descricao;
             Valor = valor;
+            Locado = locado;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -32,6 +35,11 @@ namespace FestasInfantis.WinApp.ModuloItem
                 erros.Add("O campo \"Valor\" deve ser preenchido");
 
             return erros;
+        }
+
+        public override string ToString()
+        {
+            return $"Descrição:{Descricao}";
         }
     }
 }

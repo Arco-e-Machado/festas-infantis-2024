@@ -10,12 +10,14 @@ namespace FestasInfantis.WinApp.ModuloTema
 {
     public class ControladorTema : ControladorBase
     {
-        RepositorioTema repositorioTema;
+        IRepositorioTema repositorioTema;
+        IRepositorioItem repositorioItem;
         TabelaTemaControl tabelaTema;
 
-        public ControladorTema(RepositorioTema repositorio)
+        public ControladorTema(IRepositorioTema rTema, IRepositorioItem rItens)
         {
-            repositorioTema = repositorio;
+            repositorioTema = rTema;
+            repositorioItem = rItens;
         }
         public override string TipoCadastro { get { return "Tema"; } }
 
@@ -28,6 +30,8 @@ namespace FestasInfantis.WinApp.ModuloTema
         public override void Adicionar()
         {
             TelaTemaFrom telaTema = new TelaTemaFrom();
+
+            CarregarItens(telaTema);
 
             DialogResult resultado = telaTema.ShowDialog();
 
@@ -59,7 +63,19 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         public override UserControl ObterListagem()
         {
-            throw new NotImplementedException();
+            if(tabelaTema == null)
+                tabelaTema = new TabelaTemaControl();
+
+            CarregarTema();
+
+            return tabelaTema;
+        }
+
+        public void CarregarItens(TelaTemaFrom telaTema)
+        {
+            List<Item> itens = repositorioItem.SelecionarTodos();
+
+            telaTema.MostrarItens(itens);
         }
     }
 }

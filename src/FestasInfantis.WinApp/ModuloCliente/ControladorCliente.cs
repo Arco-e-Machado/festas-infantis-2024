@@ -11,10 +11,10 @@ namespace FestasInfantis.WinApp.ModuloCliente
 {
     public class ControladorCliente : ControladorBase, IControladorClienteAluguel
     {
-        RepositorioCliente repositorioCliente;
+        IRepositorioCliente repositorioCliente;
         TabelaClienteControl tabelaCliente;
 
-        public ControladorCliente(RepositorioCliente repositorio)
+        public ControladorCliente(IRepositorioCliente repositorio)
         {
             repositorioCliente = repositorio;
         }
@@ -151,9 +151,9 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         private void CarregarClientes()
         {
-            List<Cliente> cliente = repositorioCliente.SelecionarTodos();
+            List<Cliente> clientes = repositorioCliente.SelecionarTodos();
 
-            tabelaCliente.AtualizarRegistros(cliente);
+            tabelaCliente.AtualizarRegistros(clientes);
         }
     }
 }

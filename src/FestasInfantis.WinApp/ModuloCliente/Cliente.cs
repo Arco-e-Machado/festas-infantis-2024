@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloCliente
 {
+
     public class Cliente : EntidadeBase
     {
         public string Nome { get; set; }
@@ -15,6 +16,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
         public string Cpf { get; set; }
         public List<Aluguel> alugueis { get; set; } = new List<Aluguel>();
 
+        public Cliente() { }
         public Cliente(string nome, string telefone, string cpf)
         {
             Nome = nome;
@@ -32,7 +34,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         public override string? ToString()
         {
-            return $"Nome: {Nome} | Telefone: {Telefone} |  Cpf: {Cpf}";
+            return $"{Nome}{Telefone}{Cpf}";
         }
 
         public void ListarAlugueis(Aluguel aluguel)

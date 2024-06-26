@@ -35,8 +35,8 @@ namespace FestasInfantis.WinApp.ModuloItem
         {
             string descricao = txtDescricao.Text;
             decimal valor = txtValor.Value;
-
-            item = new Item(descricao, valor);
+            
+            item = new Item(descricao, valor, false);
         }
     }
 }

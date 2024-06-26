@@ -23,9 +23,12 @@ namespace FestasInfantis.WinApp.ModuloTema
             grid.ConfigurarGridZebrado();
         }
 
-        internal void AtualizarRegistros(List<Tema> temas)
+        public void AtualizarRegistros(List<Tema> temas)
         {
-            throw new NotImplementedException();
+            grid.Rows.Clear();
+
+            foreach (Tema t in temas)
+                grid.Rows.Add(t.Id.ToString(),t.Nome);
         }
 
         private DataGridViewColumn[] CriarColunas()

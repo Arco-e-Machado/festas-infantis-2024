@@ -45,7 +45,7 @@
             lblId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lblId.Location = new Point(52, 40);
             lblId.Name = "lblId";
-            lblId.Size = new Size(31, 23);
+            lblId.Size = new Size(24, 17);
             lblId.TabIndex = 0;
             lblId.Text = "ID:";
             // 
@@ -55,7 +55,7 @@
             lblDescricao.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lblDescricao.Location = new Point(12, 73);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(87, 23);
+            lblDescricao.Size = new Size(68, 17);
             lblDescricao.TabIndex = 1;
             lblDescricao.Text = "Descrição:";
             // 
@@ -65,7 +65,7 @@
             lblValor.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lblValor.Location = new Point(34, 104);
             lblValor.Name = "lblValor";
-            lblValor.Size = new Size(54, 23);
+            lblValor.Size = new Size(42, 17);
             lblValor.TabIndex = 2;
             lblValor.Text = "Valor:";
             // 
@@ -94,7 +94,7 @@
             // 
             txtDescricao.Location = new Point(105, 73);
             txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(444, 27);
+            txtDescricao.Size = new Size(444, 23);
             txtDescricao.TabIndex = 9;
             // 
             // txtId
@@ -105,7 +105,7 @@
             txtId.Location = new Point(105, 39);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(61, 29);
+            txtId.Size = new Size(61, 25);
             txtId.TabIndex = 11;
             // 
             // txtValor
@@ -113,12 +113,12 @@
             txtValor.BorderStyle = BorderStyle.FixedSingle;
             txtValor.Location = new Point(105, 105);
             txtValor.Name = "txtValor";
-            txtValor.Size = new Size(61, 27);
+            txtValor.Size = new Size(61, 23);
             txtValor.TabIndex = 13;
             // 
             // TelaItemForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(589, 195);
             Controls.Add(txtValor);
@@ -134,6 +134,7 @@
             MinimizeBox = false;
             Name = "TelaItemForm";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro De Itens";
             ((System.ComponentModel.ISupportInitialize)txtValor).EndInit();
             ResumeLayout(false);

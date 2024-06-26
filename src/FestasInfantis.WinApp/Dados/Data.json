@@ -1,0 +1,159 @@
+{
+  "$id": "1",
+  "Itens": {
+    "$id": "2",
+    "$values": [
+      {
+        "$id": "3",
+        "Descricao": "Cadeira de balan\u00E7o",
+        "Valor": 17,
+        "Locado": true,
+        "Id": 1
+      },
+      {
+        "$id": "4",
+        "Descricao": "Moldura p/ fotografia",
+        "Valor": 7,
+        "Locado": false,
+        "Id": 2
+      },
+      {
+        "$id": "5",
+        "Descricao": "Mesa de doce",
+        "Valor": 100,
+        "Locado": true,
+        "Id": 3
+      }
+    ]
+  },
+  "Clientes": {
+    "$id": "6",
+    "$values": [
+      {
+        "$id": "7",
+        "Nome": "Leonardo Rodrigues",
+        "Telefone": "49 9 8598 8950",
+        "Cpf": "10695506836",
+        "alugueis": {
+          "$id": "8",
+          "$values": []
+        },
+        "Id": 1
+      }
+    ]
+  },
+  "Temas": {
+    "$id": "9",
+    "$values": [
+      {
+        "$id": "10",
+        "Nome": "Frozen",
+        "Itens": null,
+        "Id": 1
+      },
+      {
+        "$id": "11",
+        "Nome": "aaaa",
+        "Itens": null,
+        "Id": 2
+      },
+      {
+        "$id": "12",
+        "Nome": "Monster S.A",
+        "Itens": {
+          "$id": "13",
+          "$values": [
+            {
+              "$ref": "3"
+            },
+            {
+              "$ref": "4"
+            },
+            {
+              "$ref": "5"
+            },
+            {
+              "$ref": "3"
+            },
+            {
+              "$ref": "5"
+            }
+          ]
+        },
+        "Id": 3
+      },
+      {
+        "$id": "14",
+        "Nome": "",
+        "Itens": {
+          "$id": "15",
+          "$values": []
+        },
+        "Id": 4
+      },
+      {
+        "$id": "16",
+        "Nome": "teste",
+        "Itens": {
+          "$id": "17",
+          "$values": []
+        },
+        "Id": 5
+      },
+      {
+        "$id": "18",
+        "Nome": "",
+        "Itens": {
+          "$id": "19",
+          "$values": []
+        },
+        "Id": 6
+      },
+      {
+        "$id": "20",
+        "Nome": "teste",
+        "Itens": {
+          "$id": "21",
+          "$values": []
+        },
+        "Id": 7
+      },
+      {
+        "$id": "22",
+        "Nome": "",
+        "Itens": {
+          "$id": "23",
+          "$values": []
+        },
+        "Id": 8
+      },
+      {
+        "$id": "24",
+        "Nome": "",
+        "Itens": {
+          "$id": "25",
+          "$values": []
+        },
+        "Id": 9
+      },
+      {
+        "$id": "26",
+        "Nome": "",
+        "Itens": {
+          "$id": "27",
+          "$values": []
+        },
+        "Id": 10
+      },
+      {
+        "$id": "28",
+        "Nome": "",
+        "Itens": {
+          "$id": "29",
+          "$values": []
+        },
+        "Id": 11
+      }
+    ]
+  }
+}

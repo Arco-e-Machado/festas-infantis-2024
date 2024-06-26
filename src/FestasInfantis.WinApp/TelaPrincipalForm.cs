@@ -10,23 +10,29 @@ namespace FestasInfantis.WinApp
     public partial class TelaPrincipalForm : Form
     {
         ControladorBase controlador;
-        RepositorioCliente repositorioCliente;
+
+        IRepositorioCliente repositorioCliente;
+        IRepositorioTema repositorioTema;
+        IRepositorioItem repositorioItem;
+
         RepositorioAluguel repositorioAluguel;
-        RepositorioItem repositorioItens;
-        RepositorioTema repositorioTema;
+        ContextoDados contexto;
+
         public static TelaPrincipalForm Instancia { get; private set; }
 
         public TelaPrincipalForm()
         {
             InitializeComponent();
 
+            contexto = new ContextoDados(true);
+
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
 
-            repositorioCliente = new RepositorioCliente();
+            repositorioItem = new DadosItens(contexto);
+            repositorioCliente = new DadosCliente(contexto);
+            repositorioTema = new DadosTema(contexto);
             repositorioAluguel = new RepositorioAluguel();
-            repositorioItens = new RepositorioItem();
-            repositorioTema = new RepositorioTema();
         }
 
         public void AtualizarRodape(string texto)
@@ -118,14 +124,14 @@ namespace FestasInfantis.WinApp
 
         private void TemaMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioTema);
+            controlador = new ControladorTema(repositorioTema, repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void ItemsMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorItem(repositorioItens);
+            controlador = new ControladorItem(repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }

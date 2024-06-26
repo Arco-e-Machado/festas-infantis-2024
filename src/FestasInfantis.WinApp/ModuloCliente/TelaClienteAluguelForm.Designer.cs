@@ -101,6 +101,7 @@
             Controls.Add(txtId);
             Controls.Add(lblId);
             Name = "TelaClienteAluguelForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "TelaClienteAluguelForm";
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
