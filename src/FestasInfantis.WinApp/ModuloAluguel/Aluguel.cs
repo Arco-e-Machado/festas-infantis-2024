@@ -10,7 +10,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public Cliente Cliente { get; set; }
         public Tema Tema { get; set; }
         public Festa Festa { get; set; }
-        public bool Status { get; set; }
+        public ValorEntradaEnum Sinal { get; set; }
         public decimal PorcentagemSaida { get; set; }
         public decimal PorcentagemEntrada { get; set; }
         public DateTime DataPagamento { get; set; }
@@ -19,16 +19,16 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         {
 
         }
-        public Aluguel(Cliente cliente, Tema tema, Festa festa, bool status, decimal saida, decimal entrada, DateTime pagamento, Cliente repositorio)
+        public Aluguel(Cliente cliente, Tema tema, Festa festa, ValorEntradaEnum sinal, decimal saida, decimal entrada, DateTime pagamento)
         {
             Cliente = cliente;
             Tema = tema;
             Festa = festa;
-            Status = status;
+            Sinal = sinal;
             PorcentagemSaida = saida;
             PorcentagemEntrada = entrada;
             DataPagamento = pagamento;
-            repositorio.ListarAlugueis(this);
+            cliente.ListarAlugueis(this);
 
 
         }
@@ -39,7 +39,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             Cliente = atualizar.Cliente;
             Tema = atualizar.Tema;
             Festa = atualizar.Festa;
-            Status = atualizar.Status;
+            Sinal = atualizar.Sinal;
             PorcentagemEntrada = atualizar.PorcentagemEntrada;
             PorcentagemSaida = atualizar.PorcentagemSaida;
             DataPagamento = atualizar.DataPagamento;

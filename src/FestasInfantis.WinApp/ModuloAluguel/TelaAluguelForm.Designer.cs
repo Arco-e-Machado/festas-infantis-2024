@@ -44,24 +44,28 @@
             label5 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
+            dtHorarioTermino = new DateTimePicker();
+            dtHorarioInicio = new DateTimePicker();
             pictureBox1 = new PictureBox();
             DtpData = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             tabDadosAluguel = new TabPage();
+            label9 = new Label();
+            txtValorParcial = new TextBox();
             groupBox3 = new GroupBox();
-            textBox9 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            txtValorPendente = new TextBox();
+            txtSinal = new TextBox();
+            txtValorTemaDesconto = new TextBox();
+            txtValorTema = new TextBox();
+            txtPorcentagemDesconto = new TextBox();
             label16 = new Label();
             label14 = new Label();
             label15 = new Label();
             label13 = new Label();
             label12 = new Label();
-            cmbStatus = new ComboBox();
+            cmbSinal = new ComboBox();
             lblStatus = new Label();
             cmbTema = new ComboBox();
             cmbCliente = new ComboBox();
@@ -69,8 +73,6 @@
             lblCliente = new Label();
             btnCancelar = new Button();
             btnSalvar = new Button();
-            dtHorarioInicio = new DateTimePicker();
-            dtHorarioTermino = new DateTimePicker();
             tabCadastroAlugueis.SuspendLayout();
             tabDadosFesta.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -246,6 +248,30 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Data e Hora:";
             // 
+            // dtHorarioTermino
+            // 
+            dtHorarioTermino.CalendarMonthBackground = Color.Transparent;
+            dtHorarioTermino.CustomFormat = "HH:mm";
+            dtHorarioTermino.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtHorarioTermino.Format = DateTimePickerFormat.Custom;
+            dtHorarioTermino.Location = new Point(124, 100);
+            dtHorarioTermino.Name = "dtHorarioTermino";
+            dtHorarioTermino.RightToLeft = RightToLeft.No;
+            dtHorarioTermino.Size = new Size(105, 23);
+            dtHorarioTermino.TabIndex = 5;
+            // 
+            // dtHorarioInicio
+            // 
+            dtHorarioInicio.CalendarMonthBackground = Color.Transparent;
+            dtHorarioInicio.CustomFormat = "HH:mm";
+            dtHorarioInicio.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtHorarioInicio.Format = DateTimePickerFormat.Custom;
+            dtHorarioInicio.Location = new Point(124, 71);
+            dtHorarioInicio.Name = "dtHorarioInicio";
+            dtHorarioInicio.RightToLeft = RightToLeft.No;
+            dtHorarioInicio.Size = new Size(105, 23);
+            dtHorarioInicio.TabIndex = 4;
+            // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -301,8 +327,10 @@
             // 
             // tabDadosAluguel
             // 
+            tabDadosAluguel.Controls.Add(label9);
+            tabDadosAluguel.Controls.Add(txtValorParcial);
             tabDadosAluguel.Controls.Add(groupBox3);
-            tabDadosAluguel.Controls.Add(cmbStatus);
+            tabDadosAluguel.Controls.Add(cmbSinal);
             tabDadosAluguel.Controls.Add(lblStatus);
             tabDadosAluguel.Controls.Add(cmbTema);
             tabDadosAluguel.Controls.Add(cmbCliente);
@@ -316,13 +344,32 @@
             tabDadosAluguel.Text = "Dados Do Aluguel";
             tabDadosAluguel.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(95, 99);
+            label9.Name = "label9";
+            label9.Size = new Size(36, 15);
+            label9.TabIndex = 2;
+            label9.Text = "Valor:";
+            // 
+            // txtValorParcial
+            // 
+            txtValorParcial.Enabled = false;
+            txtValorParcial.Location = new Point(137, 96);
+            txtValorParcial.Margin = new Padding(3, 2, 3, 2);
+            txtValorParcial.Name = "txtValorParcial";
+            txtValorParcial.Size = new Size(74, 23);
+            txtValorParcial.TabIndex = 2;
+            txtValorParcial.TextAlign = HorizontalAlignment.Right;
+            // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(textBox9);
-            groupBox3.Controls.Add(textBox7);
-            groupBox3.Controls.Add(textBox8);
-            groupBox3.Controls.Add(textBox6);
-            groupBox3.Controls.Add(textBox5);
+            groupBox3.Controls.Add(txtValorPendente);
+            groupBox3.Controls.Add(txtSinal);
+            groupBox3.Controls.Add(txtValorTemaDesconto);
+            groupBox3.Controls.Add(txtValorTema);
+            groupBox3.Controls.Add(txtPorcentagemDesconto);
             groupBox3.Controls.Add(label16);
             groupBox3.Controls.Add(label14);
             groupBox3.Controls.Add(label15);
@@ -337,60 +384,60 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Dados de Pagamento:";
             // 
-            // textBox9
+            // txtValorPendente
             // 
-            textBox9.Enabled = false;
-            textBox9.Location = new Point(334, 112);
-            textBox9.Margin = new Padding(3, 2, 3, 2);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(110, 23);
-            textBox9.TabIndex = 1;
-            textBox9.Text = "0";
-            textBox9.TextAlign = HorizontalAlignment.Right;
+            txtValorPendente.Enabled = false;
+            txtValorPendente.Location = new Point(334, 112);
+            txtValorPendente.Margin = new Padding(3, 2, 3, 2);
+            txtValorPendente.Name = "txtValorPendente";
+            txtValorPendente.Size = new Size(110, 23);
+            txtValorPendente.TabIndex = 1;
+            txtValorPendente.Text = "0";
+            txtValorPendente.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox7
+            // txtSinal
             // 
-            textBox7.Enabled = false;
-            textBox7.Location = new Point(115, 114);
-            textBox7.Margin = new Padding(3, 2, 3, 2);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(110, 23);
-            textBox7.TabIndex = 1;
-            textBox7.Text = "0";
-            textBox7.TextAlign = HorizontalAlignment.Right;
+            txtSinal.Enabled = false;
+            txtSinal.Location = new Point(115, 114);
+            txtSinal.Margin = new Padding(3, 2, 3, 2);
+            txtSinal.Name = "txtSinal";
+            txtSinal.Size = new Size(110, 23);
+            txtSinal.TabIndex = 1;
+            txtSinal.Text = "0";
+            txtSinal.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox8
+            // txtValorTemaDesconto
             // 
-            textBox8.Enabled = false;
-            textBox8.Location = new Point(333, 76);
-            textBox8.Margin = new Padding(3, 2, 3, 2);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(110, 23);
-            textBox8.TabIndex = 1;
-            textBox8.Text = "0";
-            textBox8.TextAlign = HorizontalAlignment.Right;
+            txtValorTemaDesconto.Enabled = false;
+            txtValorTemaDesconto.Location = new Point(333, 76);
+            txtValorTemaDesconto.Margin = new Padding(3, 2, 3, 2);
+            txtValorTemaDesconto.Name = "txtValorTemaDesconto";
+            txtValorTemaDesconto.Size = new Size(110, 23);
+            txtValorTemaDesconto.TabIndex = 1;
+            txtValorTemaDesconto.Text = "0";
+            txtValorTemaDesconto.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox6
+            // txtValorTema
             // 
-            textBox6.Enabled = false;
-            textBox6.Location = new Point(115, 79);
-            textBox6.Margin = new Padding(3, 2, 3, 2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(110, 23);
-            textBox6.TabIndex = 1;
-            textBox6.Text = "0";
-            textBox6.TextAlign = HorizontalAlignment.Right;
+            txtValorTema.Enabled = false;
+            txtValorTema.Location = new Point(115, 79);
+            txtValorTema.Margin = new Padding(3, 2, 3, 2);
+            txtValorTema.Name = "txtValorTema";
+            txtValorTema.Size = new Size(110, 23);
+            txtValorTema.TabIndex = 1;
+            txtValorTema.Text = "0";
+            txtValorTema.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox5
+            // txtPorcentagemDesconto
             // 
-            textBox5.Enabled = false;
-            textBox5.Location = new Point(115, 45);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(51, 23);
-            textBox5.TabIndex = 1;
-            textBox5.Text = "0";
-            textBox5.TextAlign = HorizontalAlignment.Right;
+            txtPorcentagemDesconto.Enabled = false;
+            txtPorcentagemDesconto.Location = new Point(115, 45);
+            txtPorcentagemDesconto.Margin = new Padding(3, 2, 3, 2);
+            txtPorcentagemDesconto.Name = "txtPorcentagemDesconto";
+            txtPorcentagemDesconto.Size = new Size(51, 23);
+            txtPorcentagemDesconto.TabIndex = 1;
+            txtPorcentagemDesconto.Text = "0";
+            txtPorcentagemDesconto.TextAlign = HorizontalAlignment.Right;
             // 
             // label16
             // 
@@ -437,14 +484,14 @@
             label12.TabIndex = 0;
             label12.Text = "% de Desconto:";
             // 
-            // cmbStatus
+            // cmbSinal
             // 
-            cmbStatus.FormattingEnabled = true;
-            cmbStatus.Location = new Point(78, 69);
-            cmbStatus.Margin = new Padding(3, 2, 3, 2);
-            cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(133, 23);
-            cmbStatus.TabIndex = 1;
+            cmbSinal.FormattingEnabled = true;
+            cmbSinal.Location = new Point(78, 69);
+            cmbSinal.Margin = new Padding(3, 2, 3, 2);
+            cmbSinal.Name = "cmbSinal";
+            cmbSinal.Size = new Size(133, 23);
+            cmbSinal.TabIndex = 1;
             // 
             // lblStatus
             // 
@@ -512,30 +559,6 @@
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
-            // dtHorarioInicio
-            // 
-            dtHorarioInicio.CalendarMonthBackground = Color.Transparent;
-            dtHorarioInicio.CustomFormat = "HH:mm";
-            dtHorarioInicio.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtHorarioInicio.Format = DateTimePickerFormat.Custom;
-            dtHorarioInicio.Location = new Point(124, 71);
-            dtHorarioInicio.Name = "dtHorarioInicio";
-            dtHorarioInicio.RightToLeft = RightToLeft.No;
-            dtHorarioInicio.Size = new Size(105, 23);
-            dtHorarioInicio.TabIndex = 4;
-            // 
-            // dtHorarioTermino
-            // 
-            dtHorarioTermino.CalendarMonthBackground = Color.Transparent;
-            dtHorarioTermino.CustomFormat = "HH:mm";
-            dtHorarioTermino.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtHorarioTermino.Format = DateTimePickerFormat.Custom;
-            dtHorarioTermino.Location = new Point(124, 100);
-            dtHorarioTermino.Name = "dtHorarioTermino";
-            dtHorarioTermino.RightToLeft = RightToLeft.No;
-            dtHorarioTermino.Size = new Size(105, 23);
-            dtHorarioTermino.TabIndex = 5;
-            // 
             // TelaAluguelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -595,23 +618,25 @@
         private Button btnCancelar;
         private Button btnSalvar;
         private Label lblCliente;
-        private ComboBox cmbStatus;
+        private ComboBox cmbSinal;
         private Label lblStatus;
         private ComboBox cmbTema;
         private ComboBox cmbCliente;
         private Label lblTema;
         private GroupBox groupBox3;
         private Label label12;
-        private TextBox textBox9;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox txtValorPendente;
+        private TextBox txtSinal;
+        private TextBox txtValorTemaDesconto;
+        private TextBox txtValorTema;
+        private TextBox txtPorcentagemDesconto;
         private Label label16;
         private Label label14;
         private Label label15;
         private Label label13;
         private DateTimePicker dtHorarioTermino;
         private DateTimePicker dtHorarioInicio;
+        private Label label9;
+        private TextBox txtValorParcial;
     }
 }

@@ -23,8 +23,13 @@ namespace FestasInfantis.WinApp.ModuloAluguel
                 txtId.Text = value.Id.ToString();
                 cmbCliente.SelectedItem = value.Cliente;
                 cmbTema.SelectedItem = value.Tema;
-                cmbStatus.SelectedItem = value.Status;
+                cmbSinal.SelectedItem = value.Sinal;
 
+                txtValorTema.Text = "0";
+                txtValorTemaDesconto.Text = "0";
+                txtValorPendente.Text = "0";
+                txtValorParcial.Text = "0";
+                txtSinal.Text = "0";
             }
             get { return aluguel; }
         }
@@ -41,13 +46,16 @@ namespace FestasInfantis.WinApp.ModuloAluguel
                                       $", Bairro:{txtBairro}," +
                                       $" Cidade:{txtCidade.Text}," +
                                       $" Estado: {txtEstado.Text}";
+
+
             DateTime data = DtpData.Value;
             DateTime inicioFesta = dtHorarioInicio.Value;
             DateTime terminoFesta = dtHorarioTermino.Value;
 
             Cliente cliente = (Cliente)cmbCliente.SelectedItem;
             Tema tema = (Tema)cmbTema.SelectedItem;
-            bool status = (bool)cmbStatus.SelectedItem;
+            ValorEntradaEnum sinal = (ValorEntradaEnum)cmbSinal.SelectedItem;
+
 
             decimal pSaida = 0;
             decimal pEntrada = 0;
@@ -55,7 +63,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             DateTime dataPagamento = DateTime.Now;
 
             Festa festa = new Festa(endereco, tema, data, inicioFesta, terminoFesta);
-            aluguel = new Aluguel(cliente, tema, festa, status, pSaida, pEntrada, dataPagamento, cliente);
+            aluguel = new Aluguel(cliente, tema, festa, sinal, pSaida, pEntrada, dataPagamento);
         }
 
         public void MostrarDados(List<Cliente> clientes, List<Tema> temas)
@@ -65,6 +73,11 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
             foreach (Tema t in temas)
                 cmbTema.Items.Add(t);
+
+            Array tipoDeEntrada = Enum.GetValues(typeof(ValorEntradaEnum));
+
+            foreach(object v in tipoDeEntrada)
+                cmbSinal.Items.Add(v);
 
         }
     }
