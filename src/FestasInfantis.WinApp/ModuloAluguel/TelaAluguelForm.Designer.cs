@@ -362,6 +362,7 @@
             txtValorParcial.Size = new Size(74, 23);
             txtValorParcial.TabIndex = 2;
             txtValorParcial.TextAlign = HorizontalAlignment.Right;
+            txtValorParcial.TextChanged += txtValorParcial_TextChanged;
             // 
             // groupBox3
             // 
@@ -492,6 +493,7 @@
             cmbSinal.Name = "cmbSinal";
             cmbSinal.Size = new Size(133, 23);
             cmbSinal.TabIndex = 1;
+            cmbSinal.SelectedIndexChanged += cmbSinal_SelectedIndexChanged;
             // 
             // lblStatus
             // 
@@ -510,6 +512,7 @@
             cmbTema.Name = "cmbTema";
             cmbTema.Size = new Size(133, 23);
             cmbTema.TabIndex = 1;
+            cmbTema.SelectedIndexChanged += cmbTema_SelectedIndexChanged;
             // 
             // cmbCliente
             // 
@@ -519,6 +522,7 @@
             cmbCliente.Name = "cmbCliente";
             cmbCliente.Size = new Size(133, 23);
             cmbCliente.TabIndex = 1;
+            cmbCliente.SelectedIndexChanged += cmbCliente_SelectedIndexChanged;
             // 
             // lblTema
             // 

@@ -1,5 +1,6 @@
 ﻿using FestasInfantis.WinApp.ModuloAluguel.ModuloFesta;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 {
     public partial class TelaAluguelForm : Form
     {
+        IRepositorioTema t; IRepositorioItem i;
         private Aluguel aluguel;
         public Aluguel Aluguel
         {
@@ -25,17 +27,16 @@ namespace FestasInfantis.WinApp.ModuloAluguel
                 cmbTema.SelectedItem = value.Tema;
                 cmbSinal.SelectedItem = value.Sinal;
 
-                txtValorTema.Text = "0";
-                txtValorTemaDesconto.Text = "0";
-                txtValorPendente.Text = "0";
-                txtValorParcial.Text = "0";
-                txtSinal.Text = "0";
+                txtValorTema.Text = value.Tema.valorTotal.ToString();
             }
             get { return aluguel; }
         }
         public TelaAluguelForm()
         {
             InitializeComponent();
+
+            cmbSinal.Enabled = false;
+            cmbTema.Enabled = false;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -57,8 +58,8 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             ValorEntradaEnum sinal = (ValorEntradaEnum)cmbSinal.SelectedItem;
 
 
-            decimal pSaida = 0;
-            decimal pEntrada = 0;
+            string pSaida = txtValorTemaDesconto.Text;
+            decimal pEntrada = 0;//mexer no calculo
 
             DateTime dataPagamento = DateTime.Now;
 
@@ -76,8 +77,80 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
             Array tipoDeEntrada = Enum.GetValues(typeof(ValorEntradaEnum));
 
-            foreach(object v in tipoDeEntrada)
+            foreach (object v in tipoDeEntrada)
                 cmbSinal.Items.Add(v);
+        }
+
+        private void cmbTema_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Tema tema = (Tema)cmbTema.SelectedItem;
+            if (tema != null)
+                cmbSinal.Enabled = true;
+            txtValorTema.Text = tema.valorTotal.ToString();
+        }
+
+        private void cmbSinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)cmbCliente.SelectedItem;
+            Tema tema = (Tema)cmbTema.SelectedItem;
+            decimal sinal = Convert.ToDecimal((ValorEntradaEnum)cmbSinal.SelectedItem);
+            decimal valorFinal = (tema.valorTotal * (cliente.Desconto / 100));
+
+            if ((ValorEntradaEnum)cmbSinal.SelectedItem == ValorEntradaEnum.total)
+            {
+                sinal = tema.valorTotal;
+                txtValorPendente.Text = "Pago";
+                txtValorParcial.Enabled = false;
+
+            }
+            else
+            {
+                txtValorParcial.Enabled = true;
+                decimal pendente = 0;
+                pendente = (tema.valorTotal - sinal);
+                txtValorPendente.Text = pendente.ToString("C");
+            }
+
+
+            foreach (Aluguel a in cliente.alugueis)
+                cliente.Desconto = 1 + cliente.alugueis.Count();//corrigir o calculo
+
+            txtValorTemaDesconto.Text = valorFinal.ToString("C");
+            txtPorcentagemDesconto.Text = cliente.Desconto.ToString() + "%";
+            txtSinal.Text = sinal.ToString("C");
+        }
+
+        private void txtValorParcial_TextChanged(object sender, EventArgs e)
+        {
+            Tema tema = (Tema)cmbTema.SelectedItem;
+            Cliente cliente = (Cliente)cmbCliente.SelectedItem;
+            decimal sinal = Convert.ToDecimal((ValorEntradaEnum)cmbSinal.SelectedItem);
+
+            foreach (Aluguel a in cliente.alugueis)
+                cliente.Desconto = 1 + cliente.alugueis.Count();//corrigir o calculo
+
+            if ((ValorEntradaEnum)cmbSinal.SelectedItem == ValorEntradaEnum.parcial)
+            {
+                txtValorParcial.Enabled = true;
+                if (txtValorParcial.Text == string.Empty)
+                    txtValorParcial.Text = 0.ToString();
+                sinal = Convert.ToDecimal(txtValorParcial.Text);
+            }
+
+            decimal pendente = (tema.valorTotal - sinal);
+            decimal valorFinal = (tema.valorTotal * (cliente.Desconto / 100));
+
+            txtValorTemaDesconto.Text = valorFinal.ToString("C");
+            txtValorPendente.Text = pendente.ToString("C");
+            txtSinal.Text = sinal.ToString("C");
+        }
+
+        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)cmbCliente.SelectedItem;
+
+            if (cliente != null)
+                cmbTema.Enabled = true;
 
         }
     }

@@ -14,17 +14,9 @@ namespace FestasInfantis.WinApp.ModuloAluguel.ModuloPagamento
         public decimal ValorPendente { get; set; }
         public decimal ValorPercentualCliente { get; set; }
 
-        public ConfiguracaoPagamento()
-        {
+        public ConfiguracaoPagamento(){}
 
-        }
-
-        public ConfiguracaoPagamento(
-            decimal valorEntrada,
-            decimal valorTema,
-            decimal valorComDesconto,
-            decimal valorPendente,
-            decimal valorPercentualCliente)
+        public ConfiguracaoPagamento(decimal valorEntrada,decimal valorTema,decimal valorComDesconto,decimal valorPendente,decimal valorPercentualCliente)
         {
             ValorEntrada = valorEntrada;
             ValorTema = valorTema;

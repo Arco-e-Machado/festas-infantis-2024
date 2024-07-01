@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FestasInfantis.WinApp.ModuloAluguel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,8 +40,10 @@ namespace FestasInfantis.WinApp.ModuloCliente
             string nome = txtNome.Text;
             string telefone = txtFone.Text;
             string cpf = txtCpf.Text;
-            
-            cliente = new Cliente(nome, telefone, cpf);
+
+            List<Aluguel> alugueis = new List<Aluguel>();
+
+            cliente = new Cliente(nome, telefone, cpf, alugueis);
         }
     }
 }

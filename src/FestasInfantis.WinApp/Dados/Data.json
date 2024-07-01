@@ -5,27 +5,54 @@
     "$values": [
       {
         "$id": "3",
-        "Descricao": "Bancos para fotografia",
+        "Descricao": "Cadeiras ( 8 unidades)",
         "Valor": 100,
         "Locado": true,
         "Id": 1
+      },
+      {
+        "$id": "4",
+        "Descricao": "Mesa de doces (Unidade)",
+        "Valor": 94,
+        "Locado": true,
+        "Id": 2
+      },
+      {
+        "$id": "5",
+        "Descricao": "Quadro fotografias",
+        "Valor": 100,
+        "Locado": true,
+        "Id": 3
       }
     ]
   },
   "Temas": {
-    "$id": "4",
+    "$id": "6",
     "$values": [
       {
-        "$id": "5",
-        "Nome": "Lilo \u0026 Stitch",
+        "$id": "7",
+        "Nome": "Frozen",
+        "valorTotal": 294,
         "Itens": {
-          "$id": "6",
+          "$id": "8",
           "$values": [
             {
               "$ref": "3"
             },
             {
+              "$ref": "4"
+            },
+            {
+              "$ref": "5"
+            },
+            {
               "$ref": "3"
+            },
+            {
+              "$ref": "4"
+            },
+            {
+              "$ref": "5"
             }
           ]
         },
@@ -34,43 +61,174 @@
     ]
   },
   "Festas": {
-    "$id": "7",
+    "$id": "9",
     "$values": []
   },
   "Clientes": {
-    "$id": "8",
+    "$id": "10",
     "$values": [
       {
-        "$id": "9",
+        "$id": "11",
         "Nome": "Leonardo Rodrigues",
-        "Telefone": "49 9 9807-6236",
+        "Telefone": "(49) 9 9807-6236",
         "Cpf": "106.955.069-86",
+        "Desconto": 7,
         "alugueis": {
-          "$id": "10",
+          "$id": "12",
           "$values": [
             {
-              "$id": "11",
+              "$id": "13",
               "Cliente": {
-                "$ref": "9"
+                "$ref": "11"
               },
               "Tema": {
-                "$ref": "5"
+                "$ref": "7"
               },
               "Festa": {
-                "$id": "12",
-                "Endereco": "Rua:Manoel MarianoN\u00BA87, Bairro:System.Windows.Forms.TextBox, Text: Dom daniel, Cidade:Lages, Estado: SC",
-                "Data": "2024-06-27T17:48:13.728",
-                "HoraInicio": "2024-06-26T17:00:13.722",
-                "HoraTermino": "2024-06-26T20:00:13.718",
+                "$id": "14",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:44:26.3855256-03:00",
+                "HoraInicio": "2024-06-30T21:44:26.3816494-03:00",
+                "HoraTermino": "2024-06-30T21:44:26.3761084-03:00",
                 "Id": 0
               },
-              "Status": {
-                "$id": "Total"
-              },
+              "Sinal": 0,
               "PorcentagemSaida": 0,
               "PorcentagemEntrada": 0,
-              "DataPagamento": "2024-06-26T17:48:53.3325543-03:00",
+              "DataPagamento": "2024-06-30T21:44:36.5839195-03:00",
               "Id": 1
+            },
+            {
+              "$id": "15",
+              "Cliente": {
+                "$ref": "11"
+              },
+              "Tema": {
+                "$ref": "7"
+              },
+              "Festa": {
+                "$id": "16",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:44:37.5874955-03:00",
+                "HoraInicio": "2024-06-30T21:44:37.5831726-03:00",
+                "HoraTermino": "2024-06-30T21:44:37.5783356-03:00",
+                "Id": 0
+              },
+              "Sinal": 1,
+              "PorcentagemSaida": 0,
+              "PorcentagemEntrada": 0,
+              "DataPagamento": "2024-06-30T21:44:56.4735678-03:00",
+              "Id": 2
+            },
+            {
+              "$id": "17",
+              "Cliente": {
+                "$ref": "11"
+              },
+              "Tema": {
+                "$ref": "7"
+              },
+              "Festa": {
+                "$id": "18",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:44:58.2704046-03:00",
+                "HoraInicio": "2024-06-30T21:44:58.2662018-03:00",
+                "HoraTermino": "2024-06-30T21:44:58.2621107-03:00",
+                "Id": 0
+              },
+              "Sinal": 0,
+              "PorcentagemSaida": 0,
+              "PorcentagemEntrada": 0,
+              "DataPagamento": "2024-06-30T21:45:12.3176453-03:00",
+              "Id": 3
+            },
+            {
+              "$id": "19",
+              "Cliente": {
+                "$ref": "11"
+              },
+              "Tema": {
+                "$ref": "7"
+              },
+              "Festa": {
+                "$id": "20",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:45:13.2639035-03:00",
+                "HoraInicio": "2024-06-30T21:45:13.2593113-03:00",
+                "HoraTermino": "2024-06-30T21:45:13.255734-03:00",
+                "Id": 0
+              },
+              "Sinal": 0,
+              "PorcentagemSaida": 0,
+              "PorcentagemEntrada": 0,
+              "DataPagamento": "2024-06-30T21:45:23.0638313-03:00",
+              "Id": 4
+            },
+            {
+              "$id": "21",
+              "Cliente": {
+                "$ref": "11"
+              },
+              "Tema": {
+                "$ref": "7"
+              },
+              "Festa": {
+                "$id": "22",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:45:24.0519224-03:00",
+                "HoraInicio": "2024-06-30T21:45:24.0472705-03:00",
+                "HoraTermino": "2024-06-30T21:45:24.0431216-03:00",
+                "Id": 0
+              },
+              "Sinal": 1,
+              "PorcentagemSaida": 0,
+              "PorcentagemEntrada": 0,
+              "DataPagamento": "2024-06-30T21:45:43.6818346-03:00",
+              "Id": 5
+            },
+            {
+              "$id": "23",
+              "Cliente": {
+                "$ref": "11"
+              },
+              "Tema": {
+                "$ref": "7"
+              },
+              "Festa": {
+                "$id": "24",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:48:48.2251367-03:00",
+                "HoraInicio": "2024-06-30T21:48:48.2211305-03:00",
+                "HoraTermino": "2024-06-30T21:48:48.2149598-03:00",
+                "Id": 0
+              },
+              "Sinal": 0,
+              "PorcentagemSaida": 0,
+              "PorcentagemEntrada": 0,
+              "DataPagamento": "2024-06-30T21:48:55.4416591-03:00",
+              "Id": 1
+            },
+            {
+              "$id": "25",
+              "Cliente": {
+                "$ref": "11"
+              },
+              "Tema": {
+                "$ref": "7"
+              },
+              "Festa": {
+                "$id": "26",
+                "Endereco": "Rua:N\u00BA, Bairro:System.Windows.Forms.TextBox, Text: , Cidade:, Estado: ",
+                "Data": "2024-06-30T21:48:58.561617-03:00",
+                "HoraInicio": "2024-06-30T21:48:58.5579756-03:00",
+                "HoraTermino": "2024-06-30T21:48:58.5544553-03:00",
+                "Id": 0
+              },
+              "Sinal": 1,
+              "PorcentagemSaida": 0,
+              "PorcentagemEntrada": 0,
+              "DataPagamento": "2024-06-30T21:49:07.4473383-03:00",
+              "Id": 2
             }
           ]
         },
@@ -79,10 +237,13 @@
     ]
   },
   "Alugueis": {
-    "$id": "14",
+    "$id": "27",
     "$values": [
       {
-        "$ref": "11"
+        "$ref": "23"
+      },
+      {
+        "$ref": "25"
       }
     ]
   }

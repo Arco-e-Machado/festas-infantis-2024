@@ -27,13 +27,15 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             List<Item> repositorio = ListItens.Items.Cast<Item>().ToList();
 
+            decimal valorTotal = 0;
             foreach (Item i in ListItens.CheckedItems)
             {
                 repositorio.Add(i);
                 i.Locado = true;
+                valorTotal += i.Valor;
             }
 
-            tema = new Tema(nome, repositorio);
+            tema = new Tema(nome, valorTotal, repositorio);
         }
 
         public void MostrarItens(List<Item> itens)

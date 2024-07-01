@@ -14,14 +14,16 @@ namespace FestasInfantis.WinApp.ModuloCliente
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Cpf { get; set; }
-        public List<Aluguel> alugueis { get; set; } = new List<Aluguel>();
+        public decimal Desconto { get; set; }
+        public List<Aluguel> alugueis { get; set; }
 
         public Cliente() { }
-        public Cliente(string nome, string telefone, string cpf)
+        public Cliente(string nome, string telefone, string cpf, List<Aluguel> a)
         {
             Nome = nome;
             Telefone = telefone;
             Cpf = cpf;
+            alugueis = a;
         }
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {

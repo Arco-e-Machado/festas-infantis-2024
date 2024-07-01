@@ -2,6 +2,7 @@
 using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloAluguel.ModuloFesta;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 using System;
 using System.Collections.Generic;

@@ -30,7 +30,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
             foreach (Aluguel a in alugueis)
             {
-                grid.Rows.Add(a.Id,a.Cliente,a.Tema,a.Festa,a.Status,a.PorcentagemSaida,a.DataPagamento);
+                grid.Rows.Add(a.Id,a.Cliente,a.Tema,a.Festa,a.Sinal,a.PorcentagemSaida,a.DataPagamento);
             }
         }
 

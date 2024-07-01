@@ -44,7 +44,7 @@ namespace FestasInfantis.WinApp.ModuloTema
             CarregarTema();
         }
 
-        private void CarregarTema()
+        public void CarregarTema()
         {
             List<Tema> temas = repositorioTema.SelecionarTodos();
 

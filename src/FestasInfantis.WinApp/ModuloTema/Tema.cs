@@ -7,13 +7,15 @@ namespace FestasInfantis.WinApp.ModuloTema
     public class Tema : EntidadeBase
     {
         public string Nome { get; set; }
+        public decimal valorTotal { get; set; }
         public List<Item> Itens { get; set; }
 
 
-        public Tema(){}
-        public Tema( string nome, List<Item> itens)
+        public Tema() { }
+        public Tema(string nome, decimal Total, List<Item> itens)
         {
             Nome = nome;
+            valorTotal = Total;
             Itens = itens;
         }
 
@@ -21,7 +23,7 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             List<string> erros = new List<string>();
 
-            if(string.IsNullOrEmpty(Nome.Trim()))
+            if (string.IsNullOrEmpty(Nome.Trim()))
                 erros.Add("O campo \"nome\" não pode estar vazio");
 
 
